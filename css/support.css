@@ -1,0 +1,53 @@
+.flex {
+    display: flex;
+}
+    
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.f-js {
+    justify-content: start;
+}
+
+.f-jc {
+    justify-content: center;
+}
+
+.f-je {
+    justify-content: end;
+}   
+
+.f-jsa {
+    justify-content: space-around;
+}
+
+.f-jsb {
+    justify-content: space-between;
+}
+
+.f-as {
+    align-items: start;
+}
+
+.f-ac {
+    align-items: center;
+}
+
+.f-ae {
+    align-items: end;
+}
+
+    
+.btn {
+    margin: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn span::after {
+    margin-left: .5rem;
+    font-family: "Font Awesome 5 Icon"; content: "\f08e";
+}

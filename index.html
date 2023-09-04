@@ -3,29 +3,113 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hello html</title>
-        <meta name="description" content="En beskrivning av sidan">
-        <meta name="keywords" content="Nyckelord separerade med kommatecken">
-        <meta name="author" content="Ansvarig utgivare">
+        <title>Crito - Agency Service</title>
+        <meta name="description" content="This is an assignment for Webutvecklare inom .NET">
+        <meta name="keywords" content="utbildning, frontend">
+        <meta name="author" content="Crito">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- FONT -->
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inter">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=DM+Sans">
+
+        <!-- FONTAWESOME -->
+        <script src="https://kit.fontawesome.com/3684d119b8.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="/css/reset.css">
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/support.css">
         <link rel="stylesheet" href="/css/style.css">
     </head>
 
-    <body>
+    <body class="flex-col f-ac">
+       <header class="flex f-jsb">
+        <div class="flex f-ac brand-wrapper">
+            <img src="/img/crito-logo.png" alt="Crito logo" class="logo">
+           
+            <div class="flex-col f-as brand-text">
+                <span class="h">Crito</span>
+                <span class="t">Agency Service</span>
+            </div>
+        </div>
+        <div class="flex-col f-jsb contact-nav">
+            <div class="contact-bar">
+                <div class="flex contact">
+                    <div class="flex f-ac tel-wrapper">
+                        <i class="fa fa-regular fa-envelope"></i>
+                        <span class="tel">+46 (8) 121 470 50</span>    
+                    </div>
+                    <div class="flex f-ac mail-wrapper">
+                        <i class="fa fa-regular fa-envelope"></i>
+                        <span class="mail">info@crito.com</span>
+                    </div>
+                    <div class="flex f-ac address-wrapper">
+                        <i class="fa fa-regular fa-envelope"></i>
+                        <span class="address">Sveavägen 31, 111 34 STOCKHOLM</span>
+                </div>
+                <div class="flex social">
+                    <i class="fa fa-regular fa-envelope" alt="Facebook icon"></i>
+                    <i class="fa fa-regular fa-envelope" alt="Twitter icon"></i>
+                    <i class="fa fa-regular fa-envelope" alt="Instagram icon"></i>
+                    <i class="fa fa-regular fa-envelope" alt="LinkedIn icon"></i>
+                </div>
+            </div>
+            
+            <div class="nav-bar flex f-jsb f-ac">
+                <nav class="flex">
+                    <a href="index.html" id="home">Home</a>
+                    <a href="index.html" id="service">Service</a>
+                    <a href="news.html" id="news">News</a>
+                    <a href="contact.html" id="contact">Contact</a>
+                </nav>
+                <button type="button" id="login-btn" class="btn">
+                    <span>Login</span>
+                </button>
+            </div>
+        </div>
+       </header>
 
-       <header></header>
-
-       <nav></nav>
+       
         
         <main>
-            <section>
-                <article>
-                    <img src="/img/placeholder.jpg">
-                </article>
+            <section class="hero">
+                <div class="banner">
+                    <div class="content">
+                    <span class="h">We provide The Bestbusiness solutions</span>
+                    <span class="t">Establish your vision and value proposition and turn them into testable prototypes.</span>
+                    <div class="btn-group">
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
             </section>
+            <section class="logos"></section>
+            <section class="features"></section>
+            <section class="about"></section>
+            <section class="service-fun"></section>
+            <section class="why-us"></section>
+            <section class="project-case"></section>
+            <section class="team-testimonials"></section>
+            <section class="blog"></section>
+            <section class="newsletter"></section>
         </main>
         
         <footer></footer>
