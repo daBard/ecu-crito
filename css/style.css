@@ -21,13 +21,16 @@
 }
 #navbarNav section .contact {
   grid-area: contact;
-  gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
   justify-content: start;
 }
 #navbarNav section .contact div {
-  align-items: center;
+  gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
 }
-#navbarNav section .contact div i {
+#navbarNav section .contact div div {
+  align-items: center;
+  gap: 0;
+}
+#navbarNav section .contact div div i {
   padding-right: var(--bs-navbar-nav-link-padding-x);
 }
 #navbarNav section .social {
@@ -54,23 +57,28 @@
   border-top: 1px solid #84848a;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 768px) {
   #navbarNav section {
-    grid-template-areas: "navi contact" "social login";
+    grid-template-areas: "navi navi contact contact" "social social social login";
     row-gap: 0rem;
     -moz-column-gap: 0rem;
          column-gap: 0rem;
   }
   #navbarNav section .contact {
     grid-area: contact;
-    flex-direction: column;
     gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
-    align-items: start;
+    justify-content: end;
   }
-  #navbarNav section .contact div i {
+  #navbarNav section .contact div {
+    flex-direction: column;
+  }
+  #navbarNav section .contact div div {
+    flex-direction: row;
+  }
+  #navbarNav section .contact div div i {
     padding-right: calc(var(--bs-navbar-nav-link-padding-x) * 1.5);
   }
-  #navbarNav section .contact div .address {
+  #navbarNav section .contact div div .address {
     display: flex;
     flex-direction: column;
   }
@@ -99,4 +107,4 @@
     padding-top: var(--bs-navbar-nav-link-padding-x);
     border-top: none;
   }
-}/*# sourceMappingURL=style.css.map */
+}

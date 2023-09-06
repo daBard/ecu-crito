@@ -24,7 +24,7 @@ $another: #343434;
 
 #navbarNav {
 
-    section {
+    & section {
         width: 100%;
         display: grid;
         grid-template-areas: 
@@ -32,40 +32,44 @@ $another: #343434;
         'navi login';
         row-gap: 1rem;
 
-        .contact {
+        & .contact {
             grid-area: contact;
-            gap: calc(var(--bs-navbar-nav-link-padding-x)*2);
             justify-content: start;
+            
+            & div {
+                gap: calc(var(--bs-navbar-nav-link-padding-x)*2);
+                
+                & div {
+                    align-items: center;
+                    gap: 0;
 
-            div {
-                align-items: center;
-
-                i {
-                    padding-right: var(--bs-navbar-nav-link-padding-x);
+                    & i {
+                        padding-right: var(--bs-navbar-nav-link-padding-x);
+                    }
                 }
             }
         }
 
-        .social {
+        & .social {
             grid-area: social;
             justify-content: end;
             gap: calc(var(--bs-navbar-nav-link-padding-x)*2);
         }
 
-        .navi {
+        & .navi {
             grid-area: navi;
             justify-content: start;
             padding-top: 1rem;
             border-top: 1px solid #84848a;
             
-            ul {
+            & ul {
                 gap: var(--bs-navbar-nav-link-padding-x);
 
                 & li a:first-child { padding-left: 0; }
             }
         }
 
-        .login {
+        & .login {
             grid-area: login;
             justify-content: end;
             padding-top: 1rem;
@@ -74,34 +78,40 @@ $another: #343434;
     }    
 }
 
-@media (max-width: 991.98px) { 
+@media (max-width: 768px) { 
     #navbarNav {
 
-        section {
+        & section {
             grid-template-areas: 
-            'navi contact'
-            'social login';
+            'navi navi contact contact'
+            'social social social login';
             row-gap: 0rem;
             column-gap: 0rem;
     
-            .contact {
+            & .contact {
                 grid-area: contact;
-                flex-direction: column;
                 gap: calc(var(--bs-navbar-nav-link-padding-x)*2);
-                align-items: start;
-    
-                div {
-                    i {
-                        padding-right: calc(var(--bs-navbar-nav-link-padding-x)*1.5);
-                    }
-                    .address {
-                        display: flex;
-                        flex-direction: column;
+                justify-content: end;
+                
+                & div {
+                    flex-direction: column;
+                    
+                    & div {
+                        flex-direction: row;
+
+                        & i {
+                            padding-right: calc(var(--bs-navbar-nav-link-padding-x)*1.5);
+                        }
+                        & .address {
+                            display: flex;
+                            flex-direction: column;
+                        }
                     }
                 }
             }
+            
     
-            .social {
+            & .social {
                 grid-area: social;
                 justify-self: start;
                 justify-content: space-between;
@@ -109,7 +119,7 @@ $another: #343434;
                 gap: calc(var(--bs-navbar-nav-link-padding-x)*4);
             }
     
-            .navi {
+            & .navi {
                 grid-area: navi;
                 justify-content: start;
                 padding-top: 0;
@@ -122,7 +132,7 @@ $another: #343434;
                 }
             }
     
-            .login {
+            & .login {
                 grid-area: login;
                 justify-content: end;
                 padding-top: var(--bs-navbar-nav-link-padding-x);
