@@ -13,3 +13,87 @@ $another: #343434;
 
     font-size: 16px;
 }
+
+.container {
+    max-width: 1520px;
+}
+
+.flex {
+
+}
+
+#navbarNav {
+
+    section {
+        width: 100%;
+        display: grid;
+        grid-template-areas: 
+        'contact social'
+        'navi login';
+
+        .contact {
+            grid-area: contact;
+            padding-left: var(--bs-navbar-nav-link-padding-x);
+            gap: calc(var(--bs-navbar-nav-link-padding-x)*2);
+            justify-content: start;
+
+            div {
+                align-items: center;
+
+                i {
+                    padding-right: var(--bs-navbar-nav-link-padding-x);
+                }
+            }
+        }
+
+        .social {
+            grid-area: social;
+            justify-content: end;
+        }
+
+        .navi {
+            grid-area: navi;
+            justify-content: start;
+            padding-top: 1rem;
+            border-top: 1px solid #84848a;
+        }
+
+        .login {
+            grid-area: login;
+            justify-content: end;
+            padding-top: 1rem;
+            border-top: 1px solid #84848a;
+        }
+    }    
+}
+
+@media (max-width: 991.98px) { 
+    #navbarNav {
+
+        section {
+            display: grid;
+            grid-template-areas: 
+            'navi social'
+            'login contact';
+
+            .contact {
+                flex-direction: column;
+                
+                div { align-items: start !important;}
+            }
+    
+            .social {
+                
+            }
+    
+            .navi {
+                
+            }
+    
+            .login {
+                
+            }
+        }
+    }
+}
+

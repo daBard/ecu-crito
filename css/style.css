@@ -8,3 +8,54 @@
   --font: "Inter";
   font-size: 16px;
 }
+
+.container {
+  max-width: 1520px;
+}
+
+#navbarNav section {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "contact social" "navi login";
+}
+#navbarNav section .contact {
+  grid-area: contact;
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
+  justify-content: start;
+}
+#navbarNav section .contact div {
+  align-items: center;
+}
+#navbarNav section .contact div i {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+}
+#navbarNav section .social {
+  grid-area: social;
+  justify-content: end;
+}
+#navbarNav section .navi {
+  grid-area: navi;
+  justify-content: start;
+  padding-top: 1rem;
+  border-top: 1px solid #84848a;
+}
+#navbarNav section .login {
+  grid-area: login;
+  justify-content: end;
+  padding-top: 1rem;
+  border-top: 1px solid #84848a;
+}
+
+@media (max-width: 991.98px) {
+  #navbarNav section {
+    display: grid;
+    grid-template-areas: "navi social" "login contact";
+  }
+  #navbarNav section .contact {
+    flex-direction: column;
+  }
+  #navbarNav section .contact div {
+    align-items: start !important;
+  }
+}/*# sourceMappingURL=style.css.map */
