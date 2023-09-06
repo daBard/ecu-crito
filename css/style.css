@@ -17,10 +17,10 @@
   width: 100%;
   display: grid;
   grid-template-areas: "contact social" "navi login";
+  row-gap: 1rem;
 }
 #navbarNav section .contact {
   grid-area: contact;
-  padding-left: var(--bs-navbar-nav-link-padding-x);
   gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
   justify-content: start;
 }
@@ -33,12 +33,19 @@
 #navbarNav section .social {
   grid-area: social;
   justify-content: end;
+  gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
 }
 #navbarNav section .navi {
   grid-area: navi;
   justify-content: start;
   padding-top: 1rem;
   border-top: 1px solid #84848a;
+}
+#navbarNav section .navi ul {
+  gap: var(--bs-navbar-nav-link-padding-x);
+}
+#navbarNav section .navi ul li a:first-child {
+  padding-left: 0;
 }
 #navbarNav section .login {
   grid-area: login;
@@ -49,13 +56,47 @@
 
 @media (max-width: 991.98px) {
   #navbarNav section {
-    display: grid;
-    grid-template-areas: "navi social" "login contact";
+    grid-template-areas: "navi contact" "social login";
+    row-gap: 0rem;
+    -moz-column-gap: 0rem;
+         column-gap: 0rem;
   }
   #navbarNav section .contact {
+    grid-area: contact;
+    flex-direction: column;
+    gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
+    align-items: start;
+  }
+  #navbarNav section .contact div i {
+    padding-right: calc(var(--bs-navbar-nav-link-padding-x) * 1.5);
+  }
+  #navbarNav section .contact div .address {
+    display: flex;
     flex-direction: column;
   }
-  #navbarNav section .contact div {
-    align-items: start !important;
+  #navbarNav section .social {
+    grid-area: social;
+    justify-self: start;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(var(--bs-navbar-nav-link-padding-x) * 4);
+  }
+  #navbarNav section .navi {
+    grid-area: navi;
+    justify-content: start;
+    padding-top: 0;
+    border-top: none;
+  }
+  #navbarNav section .navi ul {
+    gap: 0;
+  }
+  #navbarNav section .navi ul li a:first-child {
+    padding-left: 0;
+  }
+  #navbarNav section .login {
+    grid-area: login;
+    justify-content: end;
+    padding-top: var(--bs-navbar-nav-link-padding-x);
+    border-top: none;
   }
 }/*# sourceMappingURL=style.css.map */
