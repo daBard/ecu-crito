@@ -1,12 +1,30 @@
 :root {
-  --color: #191919;
-  --color-sec: #84848a;
-  --bg-color: #f0efe9;
-  --bg-white: #ffffff;
-  --btn-color: #f9d783;
-  --h-font: "DM Sans";
-  --font: "Inter";
   font-size: 16px;
+}
+
+html, body, header, nav, main, footer {
+  background-color: #f0efe9;
+}
+html > *, body > *, header > *, nav > *, main > *, footer > * {
+  color: #191919;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #191919;
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn::after {
+  margin-left: 0.5rem;
+  font-family: "Font Awesome 5 Brands";
+  content: "\f099";
 }
 
 .container {
@@ -16,95 +34,163 @@
 #navbarNav section {
   width: 100%;
   display: grid;
-  grid-template-areas: "contact social" "navi login";
+  grid-template-areas: "contact social" "line line" "navi login";
   row-gap: 1rem;
 }
-#navbarNav section .contact {
+#navbarNav .line {
+  grid-area: line;
+  height: 1px;
+  background-color: rgba(132, 132, 138, 0.1019607843);
+}
+#navbarNav .contact {
   grid-area: contact;
   justify-content: start;
 }
-#navbarNav section .contact div {
-  gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
-}
-#navbarNav section .contact div div {
+#navbarNav .contact div div {
   align-items: center;
-  gap: 0;
+  padding: 0 0.5rem;
 }
-#navbarNav section .contact div div i {
+#navbarNav .contact div div i {
   padding-right: var(--bs-navbar-nav-link-padding-x);
 }
-#navbarNav section .social {
+#navbarNav .contact div div:not(:last-child) {
+  border-right: 1px solid rgba(132, 132, 138, 0.1019607843);
+}
+#navbarNav .social {
   grid-area: social;
   justify-content: end;
   gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
 }
-#navbarNav section .navi {
+#navbarNav .navi {
   grid-area: navi;
   justify-content: start;
-  padding-top: 1rem;
-  border-top: 1px solid #84848a;
 }
-#navbarNav section .navi ul {
-  gap: var(--bs-navbar-nav-link-padding-x);
+#navbarNav .navi .list-item {
+  margin-left: 1rem;
 }
-#navbarNav section .navi ul li a:first-child {
-  padding-left: 0;
+#navbarNav .navi :first-child {
+  margin-left: 0;
 }
-#navbarNav section .login {
+#navbarNav .login {
   grid-area: login;
   justify-content: end;
-  padding-top: 1rem;
-  border-top: 1px solid #84848a;
+}
+#navbarNav .login #login-btn {
+  background-color: #f9d783;
 }
 
+.hero {
+  position: relative;
+}
+.hero .content h1 {
+  font-weight: 900;
+}
+.hero .btngroup .btn {
+  border: 1px solid #84848a;
+}
+.hero .btngroup .btn:first-child {
+  background-color: #f9d783;
+  border: none;
+  margin-right: 1rem;
+}
+.hero .showcase-img {
+  z-index: 1;
+}
+.hero .bg-lines {
+  max-width: 50vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 992px) {
+  #navbarNav .nav {
+    width: 100%;
+    grid-template-areas: "contact contact contact contact" "line line line line" "navi navi navi login" "social social social login";
+  }
+  .contact {
+    grid-area: contact;
+    justify-content: space-evenly;
+  }
+  .contact div {
+    width: 100%;
+    justify-content: center;
+  }
+  .contact div > div {
+    align-items: center;
+  }
+  .contact div > div i {
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+  }
+  .address {
+    display: flex;
+    flex-direction: column;
+  }
+  .social {
+    justify-self: start;
+    align-self: end;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
+  }
+  .navbar-nav .nav-item {
+    padding: calc(var(--bs-navbar-nav-link-padding-x) * 0.5) var(--bs-navbar-nav-link-padding-x);
+  }
+}
 @media (max-width: 768px) {
-  #navbarNav section {
+  #navbarNav .nav {
     grid-template-areas: "navi navi contact contact" "social social social login";
     row-gap: 0rem;
     -moz-column-gap: 0rem;
          column-gap: 0rem;
   }
-  #navbarNav section .contact {
+  .contact {
     grid-area: contact;
     gap: calc(var(--bs-navbar-nav-link-padding-x) * 2);
-    justify-content: end;
+    justify-self: end;
+    height: 100%;
   }
-  #navbarNav section .contact div {
+  .contact div {
     flex-direction: column;
+    justify-content: start;
+    height: 100%;
   }
-  #navbarNav section .contact div div {
+  .contact div div {
     flex-direction: row;
+    border: none;
   }
-  #navbarNav section .contact div div i {
+  .contact div i {
     padding-right: calc(var(--bs-navbar-nav-link-padding-x) * 1.5);
   }
-  #navbarNav section .contact div div .address {
-    display: flex;
-    flex-direction: column;
-  }
-  #navbarNav section .social {
+  .social {
     grid-area: social;
     justify-self: start;
     justify-content: space-between;
-    align-items: center;
+    align-self: center;
     gap: calc(var(--bs-navbar-nav-link-padding-x) * 4);
   }
-  #navbarNav section .navi {
+  .navi {
     grid-area: navi;
     justify-content: start;
+    align-items: start;
     padding-top: 0;
     border-top: none;
   }
-  #navbarNav section .navi ul {
+  .navbar-nav {
+    flex-direction: column;
     gap: 0;
   }
-  #navbarNav section .navi ul li a:first-child {
-    padding-left: 0;
+  .navbar-nav .nav-item {
+    padding: calc(var(--bs-navbar-nav-link-padding-x) * 0.5) var(--bs-navbar-nav-link-padding-x);
   }
-  #navbarNav section .login {
+  .login {
     grid-area: login;
     justify-content: end;
     padding-top: var(--bs-navbar-nav-link-padding-x);
     border-top: none;
+  }
+  .line {
+    display: none;
   }
 }

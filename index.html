@@ -44,7 +44,7 @@
     <body class="w-100">
        <header class="w-100">
             <div class="container w-max">
-                <nav class="navbar navbar-expand-md bg-light">
+                <nav class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="./index.html">
                         <img src="/img/logotype.svg" alt="Crito logo" class="">
                     </a>
@@ -97,10 +97,10 @@
                             </div>
                             
                             <div class="login d-flex">
-                                    <button type="button" id="login-btn" class="rounded-pill bg-danger px-3 py-2">
-                                        <span>Login</span>
-                                    </button>
+                                    <button type="button" id="login-btn" class="btn">Login</button>
                             </div>
+
+                            <div class="line"></div>
 
                         </section>
                         
@@ -109,17 +109,20 @@
             </div>
        </header>
         
-        <main>
-            <section class="hero m-5 ">
-                <div class="banner">
+        <main class="w-100 d-flex flex-column align-items-center">
+            <section class="hero container row">
+                <div class="banner col d-flex flex-column justify-content-center">
                     <div class="content">
-                    <span class="h">We provide The Bestbusiness solutions</span>
-                    <span class="t">Establish your vision and value proposition and turn them into testable prototypes.</span>
-                    <div class="btn-group">
-                        <button></button>
-                        <button></button>
+                        <h1 class="display-1">We provide The Best business solutions</h1>
+                        <p class="lead">Establish your vision and value proposition and turn them into testable prototypes.</p>
+                    </div>
+                    <div class="btngroup">
+                        <button class="btn">Get Consulting</button>
+                        <button class="btn">Learn More</button>
                     </div>
                 </div>
+                <img src="./img/showcase-image.svg" alt="Man looking at pad" class="showcase-img img-fluid col">
+                <img src="./img/background-lines.svg" alt="" class="bg-lines">
             </section>
             <section class="logos"></section>
             <section class="features"></section>
