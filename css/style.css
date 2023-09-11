@@ -12,25 +12,47 @@ html > *, body > *, header > *, nav > *, main > *, footer > * {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.container {
+  max-width: 1520px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
+  font-weight: 700;
 }
 
 .btn {
   padding: 1rem 1.5rem;
   border-radius: 25px;
   cursor: pointer;
+  border: 1px solid transparent;
+  z-index: 1;
+  font-weight: 700;
 }
-
+.btn.btn-w, .btn.btn-c {
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.btn.btn-w {
+  background-color: #f0efe9;
+  border-color: #191919;
+}
+.btn.btn-w:hover {
+  background-color: #f9d783;
+  border-color: #f9d783;
+}
+.btn.btn-c {
+  background-color: #f9d783;
+  border-color: #f9d783;
+}
+.btn.btn-c:hover {
+  background-color: transparent;
+  border-color: #191919;
+}
 .btn::after {
   margin-left: 0.5rem;
   font-family: "Font Awesome 5 Brands";
   content: "\f099";
-}
-
-.container {
-  max-width: 1520px;
 }
 
 #navbarNav section {
@@ -77,32 +99,94 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: login;
   justify-content: end;
 }
-#navbarNav .login #login-btn {
-  background-color: #f9d783;
-}
 
-.hero {
+section.hero {
   position: relative;
 }
-.hero .content h1 {
+section.hero .content h1 {
   font-weight: 900;
 }
-.hero .btngroup .btn {
-  border: 1px solid #84848a;
-}
-.hero .btngroup .btn:first-child {
-  background-color: #f9d783;
-  border: none;
-  margin-right: 1rem;
-}
-.hero .showcase-img {
+section.hero .showcase-img {
   z-index: 1;
+  max-width: 50%;
+  position: relative;
+  right: -3rem;
 }
-.hero .bg-lines {
+section.hero .btngroup {
+  display: flex;
+  gap: 1rem;
+}
+section.hero img.bg-lines {
   max-width: 50vw;
+  padding: 0;
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+section.logo-bar {
+  background-color: #ffffff;
+  padding: 5rem 0;
+}
+section.logo-bar .logos {
+  justify-content: space-evenly;
+}
+
+section.features {
+  background-color: #ffffff;
+}
+section.features .container .box {
+  border: 1px solid #84848a;
+  padding: 5rem;
+  gap: 5rem;
+}
+section.features .container .box .col .left p.features {
+  color: red;
+  font-weight: 700;
+}
+section.features .container .box .col .left h2.heading {
+  font-weight: 700;
+}
+section.features .container .box .col .left .btn {
+  width: 100%;
+  margin-top: 3rem;
+}
+section.features .container .box .col .grid {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: auto auto;
+  gap: 2rem 5rem;
+}
+section.features .container .box .col .grid div h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 1.5rem 0 1rem 0;
+}
+section.about {
+  background-color: #ffffff;
+}
+section.about .container {
+  padding: 5rem;
+}
+section.about .container .row {
+  gap: 5rem;
+}
+section.about .container .row .col {
+  position: relative;
+}
+section.about .container .row .col .image {
+  padding-left: 3rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+          clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+}
+section.about .container .row .col .box {
+  max-width: 50%;
+  padding: 2rem;
+  background-color: lightblue;
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+  box-shadow: -5px 10px 100px 10px #dad9d3;
 }
 
 @media (max-width: 992px) {

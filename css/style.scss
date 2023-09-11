@@ -6,6 +6,7 @@ $bg-white: #ffffff;
 
 $color-prim: #191919;
 $color-sec: #84848a;
+$color-highlight:red;
 
 $btn-color: #f9d783;
 $line-color: #dad9d3;
@@ -26,24 +27,54 @@ html, body, header, nav, main, footer {
         }
 }
 
+.container {
+    max-width: 1520px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $headings-font;
     color: $color-prim;
+    font-weight: 700;
 }
 
 .btn {
     padding: 1rem 1.5rem;
     border-radius: 25px;
     cursor: pointer;
-}
+    border: 1px solid transparent;
+    z-index: 1;
+    font-weight: 700;
 
-.btn::after {
-    margin-left: .5rem;
-    font-family: "Font Awesome 5 Brands"; content: "\f099";
-}
+    &.btn-w, &.btn-c {
+        transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    }
+    
 
-.container {
-    max-width: 1520px;
+    &.btn-w {
+        background-color: $bg-color;
+        border-color: $color-prim;
+
+
+        &:hover {
+            background-color: $btn-color;
+            border-color: $btn-color;
+        }
+    }
+
+    &.btn-c {
+        background-color: #f9d783;
+        border-color: #f9d783;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $color-prim;
+        }
+    }
+
+    &::after {
+        margin-left: .5rem;
+        font-family: "Font Awesome 5 Brands"; content: "\f099";
+    }
 }
 
 #navbarNav {
@@ -103,17 +134,12 @@ h1, h2, h3, h4, h5, h6 {
     .login {
         grid-area: login;
         justify-content: end;
-
-        & #login-btn {
-            background-color: $btn-color;
-        }
     }
 }    
 
 
-.hero {
+section.hero {
     position: relative;
-
 
     .content {
         h1 {
@@ -121,29 +147,128 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    .btngroup {
-        .btn {
-            border: 1px solid $color-sec;
-        
-            &:first-child {
-                background-color: $btn-color;
-                border: none;
-                margin-right: 1rem;
-            }   
-        }        
-    }  
-
     .showcase-img {
         z-index: 1;
+        max-width: 50%;
+        position: relative;
+        right: -3rem;
+
     }
 
-    .bg-lines {
+    .btngroup {
+        display: flex;
+        gap: 1rem;
+    }
+
+    img.bg-lines {
         max-width: 50vw;
+        padding: 0;
         position: absolute;
         bottom: 0;
         left: 0;
+    }
 }
+
+section.logo-bar {
+    background-color: $bg-white;
+    padding: 5rem 0;
+
+    .logos {
+        justify-content: space-evenly;
+        
+    }
 }
+
+section.features {
+    background-color: $bg-white;
+
+    .container {
+
+        .box {
+            border: 1px solid $color-sec;
+            padding: 5rem;
+            gap: 5rem;
+
+            .col .left {
+
+                p.features {
+                    color: $color-highlight;
+                    font-weight: 700;
+                }
+
+                h2.heading {
+                    font-weight: 700;
+                }
+
+                .btn {
+                    width: 100%;
+                    margin-top: 3rem;
+                }
+            }
+
+            .col .grid {
+                display: grid;
+                grid-template-rows: 50% 50%;
+                grid-template-columns: auto auto;
+                gap: 2rem 5rem;
+                
+                div{
+                    i{
+                        
+                    }
+
+                    h3 {
+                        font-size: 1.5rem;
+                        font-weight: 900;
+                        margin: 1.5rem 0 1rem 0;
+                    }
+
+                    p {
+                        
+                    }
+                }
+         }
+     }
+    }
+    
+}
+
+section.about {
+    background-color: $bg-white;
+    
+    .container {
+        padding: 5rem;
+        .row {
+            gap: 5rem;
+
+            .col {
+                position: relative;
+
+                .image {
+                    padding-left: 3rem;
+                    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+                }
+
+                .box {
+                    max-width: 50%;
+                    padding: 2rem;
+                    background-color: lightblue;
+                    position: absolute;
+                    bottom: 5rem;
+                    left: 0;
+                    box-shadow: -5px 10px 100px 10px $line-color;
+                }
+
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 1520px) {
+
+}
+
 
 @media (max-width: 992px) { 
     #navbarNav {
