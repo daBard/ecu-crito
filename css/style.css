@@ -19,40 +19,74 @@ html > *, body > *, header > *, nav > *, main > *, footer > * {
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
+  font-weight: 700 !important;
+  text-transform: capitalize;
+}
+
+.highlight {
+  color: red;
   font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: capitalize;
 }
 
 .btn {
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.75rem;
   border-radius: 25px;
   cursor: pointer;
   border: 1px solid transparent;
   z-index: 1;
   font-weight: 700;
+  text-transform: capitalize;
 }
-.btn.btn-w, .btn.btn-c {
+.btn.btn-w, .btn.btn-c, .btn.btn-b {
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 .btn.btn-w {
-  background-color: #f0efe9;
+  background-color: transparent;
   border-color: #191919;
 }
 .btn.btn-w:hover {
-  background-color: #f9d783;
-  border-color: #f9d783;
+  background-color: #191919;
+  color: #ffffff;
 }
 .btn.btn-c {
   background-color: #f9d783;
   border-color: #f9d783;
 }
 .btn.btn-c:hover {
-  background-color: transparent;
+  background-color: #191919;
   border-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-b {
+  background-color: #191919;
+  border-color: #191919;
+  color: #f0efe9;
+}
+.btn.btn-b:hover {
+  background-color: transparent;
+  color: #191919;
 }
 .btn::after {
   margin-left: 0.5rem;
   font-family: "Font Awesome 5 Brands";
   content: "\f099";
+}
+
+.btn-round {
+  gap: 1rem;
+  font-weight: 700;
+}
+.btn-round i {
+  padding: 1rem;
+  border: 1px solid #191919;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.btn-round:hover i {
+  background-color: #191919;
+  color: #ffffff;
 }
 
 #navbarNav section {
@@ -101,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section.hero {
-  position: relative;
+  /* position: relative; */
 }
 section.hero .content h1 {
   font-weight: 900;
@@ -109,8 +143,8 @@ section.hero .content h1 {
 section.hero .showcase-img {
   z-index: 1;
   max-width: 50%;
-  position: relative;
-  right: -3rem;
+  /* position: relative; */
+  /* right: -3rem; */
 }
 section.hero .btngroup {
   display: flex;
@@ -140,13 +174,6 @@ section.features .container .box {
   padding: 5rem;
   gap: 5rem;
 }
-section.features .container .box .col .left p.features {
-  color: red;
-  font-weight: 700;
-}
-section.features .container .box .col .left h2.heading {
-  font-weight: 700;
-}
 section.features .container .box .col .left .btn {
   width: 100%;
   margin-top: 3rem;
@@ -159,9 +186,9 @@ section.features .container .box .col .grid {
 }
 section.features .container .box .col .grid div h3 {
   font-size: 1.5rem;
-  font-weight: 900;
   margin: 1.5rem 0 1rem 0;
 }
+
 section.about {
   background-color: #ffffff;
 }
@@ -171,22 +198,147 @@ section.about .container {
 section.about .container .row {
   gap: 5rem;
 }
-section.about .container .row .col {
+section.about .container .row .left {
   position: relative;
 }
-section.about .container .row .col .image {
+section.about .container .row .left .image-wrapper .image {
+  height: 700px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding-left: 3rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
-          clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
 }
-section.about .container .row .col .box {
-  max-width: 50%;
+section.about .container .row .left .image-wrapper .lines {
+  padding-left: 3rem;
+  width: 45%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+section.about .container .row .left .box {
+  max-width: 60%;
   padding: 2rem;
   background-color: lightblue;
   position: absolute;
   bottom: 5rem;
   left: 0;
   box-shadow: -5px 10px 100px 10px #dad9d3;
+}
+section.about .container .row .left .box p:first-of-type {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+section.about .container .row .left .box p:first-of-type span {
+  font-size: 1rem;
+}
+section.about .container .row .right {
+  padding: 1rem;
+}
+section.about .container .row .right h2 {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+section.about .container .row .right .btngroup {
+  gap: 3rem;
+}
+
+section.service-fun {
+  padding: 7em 3rem;
+  position: relative;
+}
+section.service-fun h2 {
+  max-width: 50%;
+}
+section.service-fun .cards {
+  gap: 2rem;
+  padding: 3rem 0;
+}
+section.service-fun .cards .card {
+  border: none;
+  padding: 3rem 2rem;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+section.service-fun .cards .card .line {
+  height: 1px;
+  width: 20%;
+  background-color: #191919;
+  margin-bottom: 2rem;
+}
+section.service-fun .cards .card .btn-round {
+  display: flex;
+  justify-content: end;
+}
+section.service-fun .cards .card .btn-round i {
+  background-color: #191919;
+  color: #ffffff;
+}
+section.service-fun .cards .card:hover {
+  background-color: #f9d783;
+}
+section.service-fun .cards .card:hover i {
+  background-color: #ffffff;
+  color: #191919;
+}
+section.service-fun .btngroup .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+section.service-fun .lines {
+  width: 40%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+section.why-us {
+  background-color: #ffffff;
+  padding: 5rem;
+  position: relative;
+}
+section.why-us h2 {
+  margin: 2rem 0;
+}
+section.why-us .object {
+  gap: 2rem;
+}
+section.why-us .object i {
+  padding: 1rem;
+  border: 1px solid #84848a;
+  border-radius: 50%;
+}
+section.why-us .col img {
+  float: right;
+  width: 85%;
+  position: relative;
+  z-index: 2;
+}
+section.why-us .box {
+  width: 55%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+  background-color: #f0efe9;
+}
+
+section.project-case {
+  padding: 3rem 0;
+  background-color: #ffffff;
+}
+section.project-case .grid {
+  width: 100%;
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 3rem;
+}
+section.project-case .grid .object .img-wrapper img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 992px) {

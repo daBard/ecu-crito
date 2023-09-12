@@ -34,40 +34,61 @@ html, body, header, nav, main, footer {
 h1, h2, h3, h4, h5, h6 {
     font-family: $headings-font;
     color: $color-prim;
+    font-weight: 700 !important;
+    text-transform: capitalize;
+}
+
+.highlight {
+    color: $color-highlight;
     font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: capitalize;
 }
 
 .btn {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.75rem;
     border-radius: 25px;
     cursor: pointer;
     border: 1px solid transparent;
     z-index: 1;
     font-weight: 700;
+    text-transform: capitalize;
 
-    &.btn-w, &.btn-c {
+    &.btn-w, &.btn-c, &.btn-b {
         transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
     }
     
 
     &.btn-w {
-        background-color: $bg-color;
+        background-color: transparent;
         border-color: $color-prim;
 
 
         &:hover {
-            background-color: $btn-color;
-            border-color: $btn-color;
+            background-color: $color-prim;
+            color: $bg-white;
         }
     }
 
     &.btn-c {
-        background-color: #f9d783;
-        border-color: #f9d783;
+        background-color: $btn-color;
+        border-color: $btn-color;
+
+        &:hover {
+            background-color: $color-prim;
+            border-color: $color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-b {
+        background-color: $color-prim;
+        border-color: $color-prim;
+        color: $bg-color;
 
         &:hover {
             background-color: transparent;
-            border-color: $color-prim;
+            color: $color-prim
         }
     }
 
@@ -75,6 +96,25 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: .5rem;
         font-family: "Font Awesome 5 Brands"; content: "\f099";
     }
+}
+
+.btn-round {
+    gap: 1rem;
+    font-weight: 700;
+        i {
+            padding: 1rem;
+            border: 1px solid $color-prim;
+            border-radius: 50%;
+            transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+        }
+    
+    &:hover {
+        i {
+            background-color: $color-prim;
+            color: $bg-white
+        }
+    }
+    
 }
 
 #navbarNav {
@@ -139,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 section.hero {
-    position: relative;
+    /* position: relative; */
 
     .content {
         h1 {
@@ -150,8 +190,8 @@ section.hero {
     .showcase-img {
         z-index: 1;
         max-width: 50%;
-        position: relative;
-        right: -3rem;
+        /* position: relative; */
+        /* right: -3rem; */
 
     }
 
@@ -191,15 +231,6 @@ section.features {
 
             .col .left {
 
-                p.features {
-                    color: $color-highlight;
-                    font-weight: 700;
-                }
-
-                h2.heading {
-                    font-weight: 700;
-                }
-
                 .btn {
                     width: 100%;
                     margin-top: 3rem;
@@ -219,12 +250,7 @@ section.features {
 
                     h3 {
                         font-size: 1.5rem;
-                        font-weight: 900;
                         margin: 1.5rem 0 1rem 0;
-                    }
-
-                    p {
-                        
                     }
                 }
          }
@@ -241,27 +267,185 @@ section.about {
         .row {
             gap: 5rem;
 
-            .col {
+            .left {
                 position: relative;
 
-                .image {
-                    padding-left: 3rem;
-                    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+                .image-wrapper {
+                    
+
+                    .image {
+                        height: 700px;
+                        width: 100%;
+                        object-fit: cover;  
+                        padding-left: 3rem;
+                    }
+
+                    .lines {
+                        padding-left: 3rem;
+                        width: 45%;
+                        position: absolute;
+                        top: 10%;
+                        left: 0;
+                    }
                 }
 
                 .box {
-                    max-width: 50%;
+                    max-width: 60%;
                     padding: 2rem;
                     background-color: lightblue;
                     position: absolute;
                     bottom: 5rem;
                     left: 0;
                     box-shadow: -5px 10px 100px 10px $line-color;
+
+                    p:first-of-type {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                padding: 1rem;
+
+                h2 {
+                    font-weight: 700;
+                    text-transform: capitalize;
                 }
 
+                .btngroup {
+                    gap: 3rem;
+
+                }
             }
         }
         
+    }
+}
+
+section.service-fun {
+    padding: 7em 3rem;
+    position: relative;
+
+    h2 {
+        max-width: 50%;
+    }
+
+    .cards {
+        gap: 2rem;
+        padding: 3rem 0;
+
+        .card {
+            border: none;
+            padding: 3rem 2rem;
+            justify-content: space-between;
+            text-decoration: none;
+            transition: background-color .2s ease-in-out;
+
+            .line {
+                height: 1px;
+                width: 20%;
+                background-color: $color-prim;
+                margin-bottom: 2rem;
+            }
+
+            .btn-round {
+                display: flex;
+                justify-content: end;
+                i {
+                    background-color: $color-prim;
+                    color: $bg-white;
+                }
+            }
+            
+            &:hover {
+                background-color: $btn-color;
+                i {
+                    background-color: $bg-white;
+                    color: $color-prim;
+                }
+            }
+        }  
+    }
+
+    .btngroup {
+        .btn {
+            width: fit-content;
+        }
+    }
+
+    .lines {
+        width: 40%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    
+}
+
+section.why-us {
+    background-color: $bg-white;
+    padding: 5rem;
+    position: relative;
+
+    h2 {
+        margin: 2rem 0;
+    }
+
+    .object {
+        gap: 2rem;
+
+        i {
+            padding: 1rem;
+            border: 1px solid $color-sec;
+            border-radius: 50%;
+        }
+    }
+
+    .col img {
+       float: right;
+       width: 85%;
+       position: relative;
+       z-index: 2;
+    }
+
+    .box {
+        width: 55%;
+        height: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 20%;
+        background-color: $bg-color;
+    }
+}
+
+section.project-case {
+    padding: 3rem 0;
+    background-color: $bg-white;
+
+    .grid {
+        width: 100%;
+        margin: 5rem 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 3rem;
+
+        .object {
+
+            .img-wrapper {
+                
+                img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    
+                }
+            }
+        }
     }
 }
 
