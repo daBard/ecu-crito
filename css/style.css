@@ -123,11 +123,25 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: navi;
   justify-content: start;
 }
-#navbarNav .navi .list-item {
-  margin-left: 1rem;
+#navbarNav .navi .navbar-nav {
+  gap: 1rem;
 }
-#navbarNav .navi :first-child {
-  margin-left: 0;
+#navbarNav .navi .navbar-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+}
+#navbarNav .navi .navbar-nav .nav-link::after {
+  width: 0px;
+  margin: 0.5rem auto;
+  content: "";
+  border-bottom: 1px solid #191919;
+  transition: width 0.3s ease-in-out;
+}
+#navbarNav .navi .navbar-nav .nav-link:hover, #navbarNav .navi .navbar-nav .nav-link.active {
+  color: #191919;
+}
+#navbarNav .navi .navbar-nav .nav-link:hover::after, #navbarNav .navi .navbar-nav .nav-link.active::after {
+  width: 2rem;
 }
 #navbarNav .login {
   grid-area: login;

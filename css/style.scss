@@ -165,10 +165,35 @@ h1, h2, h3, h4, h5, h6 {
         grid-area: navi;
         justify-content: start;
         
-        & .list-item { margin-left: 1rem; }
+        .navbar-nav {
+            gap: 1rem;
 
-        & :first-child { margin-left: 0; }
-        
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+
+                &::after {
+                    width: 0px;
+                    margin: .5rem auto;
+                    content: "";
+                    border-bottom: 1px solid $color-prim;
+                    transition: width .3s ease-in-out;
+                }
+
+                &:hover, &.active {
+                    color: $color-prim;
+                    &::after {
+                        width: 2rem;
+                    }
+                }
+                
+                
+
+            }
+            
+        }
+
+          
     }
 
     .login {
