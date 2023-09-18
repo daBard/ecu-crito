@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 .btn.btn-w, .btn.btn-c, .btn.btn-b {
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .btn.btn-w {
   background-color: transparent;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem;
   border: 1px solid #191919;
   border-radius: 50%;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .btn-round:hover i {
   background-color: #191919;
@@ -127,11 +127,25 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: navi;
   justify-content: start;
 }
-#navbarNav .navi .list-item {
-  margin-left: 1rem;
+#navbarNav .navi .navbar-nav {
+  gap: 1rem;
 }
-#navbarNav .navi :first-child {
-  margin-left: 0;
+#navbarNav .navi .navbar-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+}
+#navbarNav .navi .navbar-nav .nav-link::after {
+  width: 0px;
+  margin: 0.5rem auto;
+  content: "";
+  border-bottom: 1px solid #191919;
+  transition: width 0.3s ease-in-out;
+}
+#navbarNav .navi .navbar-nav .nav-link:hover, #navbarNav .navi .navbar-nav .nav-link.active {
+  color: #191919;
+}
+#navbarNav .navi .navbar-nav .nav-link:hover::after, #navbarNav .navi .navbar-nav .nav-link.active::after {
+  width: 2rem;
 }
 #navbarNav .login {
   grid-area: login;
@@ -142,7 +156,7 @@ section.hero {
   /* position: relative; */
 }
 section.hero .content h1 {
-  font-weight: 900;
+  font-weight: 700;
 }
 section.hero .showcase-img {
   z-index: 1;
@@ -262,7 +276,7 @@ section.service-fun .cards .card {
   padding: 3rem 2rem;
   justify-content: space-between;
   text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 section.service-fun .cards .card .line {
   height: 1px;
@@ -304,6 +318,10 @@ section.why-us {
 section.why-us h2 {
   margin: 2rem 0;
 }
+section.why-us a.object {
+  color: #191919;
+  text-decoration: none;
+}
 section.why-us .object {
   gap: 2rem;
 }
@@ -336,45 +354,55 @@ section.project-case .grid {
   margin: 5rem 0;
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-rows: 450px 450px;
   gap: 3rem;
 }
 section.project-case .grid a.object {
   text-decoration: none !important;
   color: #191919 !important;
+  height: 500px;
+  width: 100%;
+}
+section.project-case .grid a.object *, section.project-case .grid a.object > * {
+  transition: all 0.4s;
 }
 section.project-case .grid a.object img {
   width: 100%;
   height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 section.project-case .grid a.object h3 {
-  margin-top: 3rem;
+  align-self: start;
+  margin-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #dad9d3;
   text-transform: none;
 }
 section.project-case .grid a.object .text {
-  height: 0%;
-  display: none;
+  width: 100%;
+  height: 0px;
+  display: block;
   overflow: hidden;
 }
 section.project-case .grid a.object .btngroup {
-  padding-top: 2rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: end;
 }
 section.project-case .grid a.object .btngroup .btn {
   border: none;
+  padding: 0;
 }
 section.project-case .grid a.object:hover h3 {
   margin-top: 1rem;
 }
 section.project-case .grid a.object:hover img {
   height: 0px;
+  display: block;
 }
 section.project-case .grid a.object:hover .text {
-  display: block;
   height: 350px;
 }
 section.project-case .grid a.object:hover .btngroup .btn:hover {
@@ -473,4 +501,4 @@ section.project-case .grid a.object:hover .btngroup .btn:hover {
   .line {
     display: none;
   }
-}
+}/*# sourceMappingURL=style.css.map */

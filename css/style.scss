@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 
     &.btn-w, &.btn-c, &.btn-b {
-        transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+        transition: all .3s ease-in-out;
     }
     
 
@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
             padding: 1rem;
             border: 1px solid $color-prim;
             border-radius: 50%;
-            transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+            transition: all .3s ease-in-out;
         }
     
     &:hover {
@@ -170,10 +170,35 @@ h1, h2, h3, h4, h5, h6 {
         grid-area: navi;
         justify-content: start;
         
-        & .list-item { margin-left: 1rem; }
+        .navbar-nav {
+            gap: 1rem;
 
-        & :first-child { margin-left: 0; }
-        
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+
+                &::after {
+                    width: 0px;
+                    margin: .5rem auto;
+                    content: "";
+                    border-bottom: 1px solid $color-prim;
+                    transition: width .3s ease-in-out;
+                }
+
+                &:hover, &.active {
+                    color: $color-prim;
+                    &::after {
+                        width: 2rem;
+                    }
+                }
+                
+                
+
+            }
+            
+        }
+
+          
     }
 
     .login {
@@ -188,7 +213,7 @@ section.hero {
 
     .content {
         h1 {
-            font-weight: 900;
+            font-weight: 700;
         }
     }
 
@@ -349,7 +374,7 @@ section.service-fun {
             padding: 3rem 2rem;
             justify-content: space-between;
             text-decoration: none;
-            transition: background-color .2s ease-in-out;
+            transition: all .3s ease-in-out;
 
             .line {
                 height: 1px;
@@ -401,6 +426,11 @@ section.why-us {
         margin: 2rem 0;
     }
 
+    a.object {
+        color: $color-prim;
+        text-decoration: none;
+    }
+
     .object {
         gap: 2rem;
 
@@ -437,63 +467,72 @@ section.project-case {
         margin: 5rem 0;
         display: grid;
         grid-template-columns: 50% 50%;
+        grid-template-rows: 450px 450px;
         gap: 3rem;
 
         a.object {
             text-decoration: none !important;
             color: $color-prim !important;
-           
+            height: 500px;
+            width: 100%;
+
+            *, > * {
+                transition: all .4s;
+            }
 
             img {
                     width: 100%;
                     height: 350px;
                     object-fit: cover;
-                    
+                    display: block;
                 }
 
             h3 {
-                margin-top: 3rem;
+                align-self: start;
+                margin-top: 1rem;
                 padding-bottom: 1rem;
                 border-bottom: 1px solid $line-color;
-                text-transform: none;
+                text-transform: none;  
             }
 
             .text {
-                height: 0%;
-                display: none;
+                width: 100%;
+                height: 0px;
+                display: block;
                 overflow: hidden;
                 
             }
 
             .btngroup {
-                
-                padding-top: 2rem;
+                padding-top: 1rem;
                 display: flex;
                 justify-content: end;
 
                 .btn {
                     border: none;
+                    padding: 0;  
                 }
             }
 
             &:hover {
               
-
                 h3 {
                     margin-top: 1rem;
                 }
 
                 img {
                     height: 0px;
+                    display: block;
                 }
 
                 .text {
-                    display: block;
                     height: 350px;
                 }
 
                 .btngroup {
+
                     .btn:hover {
+                        
                         background-color: transparent;
                         color: $color-prim;
                         border: none;
