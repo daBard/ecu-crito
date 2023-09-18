@@ -6,25 +6,35 @@
 
 html, body, main {
   background-color: #ffffff;
+  z-index: -99;
 }
 html > *, body > *, main > * {
   color: #191919;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-header, nav, main, footer {
+header, nav, main {
   background-color: #f0efe9;
+}
+
+footer {
+  background-color: #191919;
 }
 
 .container {
   max-width: 1520px;
+  z-index: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
-  font-weight: 700 !important;
+  font-weight: 700;
   text-transform: capitalize;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-weight: 700;
 }
 
 .highlight {
@@ -153,23 +163,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section.hero {
-  /* position: relative; */
+  position: relative;
 }
-section.hero .content h1 {
-  font-weight: 700;
+section.hero .left {
+  gap: 3rem;
 }
-section.hero .showcase-img {
-  z-index: 1;
-  max-width: 50%;
-  /* position: relative; */
-  /* right: -3rem; */
+section.hero .right .showcase-img {
+  width: 50vw;
+  position: relative;
+  bottom: 0;
+  right: -50px;
 }
 section.hero .btngroup {
   display: flex;
   gap: 1rem;
 }
 section.hero img.bg-lines {
-  max-width: 50vw;
+  max-width: 50dvw;
   padding: 0;
   position: absolute;
   bottom: 0;
@@ -182,6 +192,12 @@ section.logo-bar {
 }
 section.logo-bar .logos {
   justify-content: space-evenly;
+}
+section.logo-bar .logos a {
+  transition: scale 0.3s ease-in-out;
+}
+section.logo-bar .logos a:hover {
+  scale: 1.2;
 }
 
 section.features {
@@ -304,7 +320,7 @@ section.service-fun .btngroup .btn {
   width: fit-content;
 }
 section.service-fun .lines {
-  width: 40%;
+  max-width: 50dvw;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -411,6 +427,86 @@ section.project-case .grid a.object:hover .btngroup .btn:hover {
   border: none;
 }
 
+section.team {
+  padding: 10rem 0 2rem 0;
+  background-color: #f9d783;
+}
+section.team .cards {
+  gap: 2rem;
+  padding: 5rem 0 3rem 0;
+}
+section.team .cards .card {
+  background-color: transparent;
+  border: none;
+  flex: 1;
+}
+section.team .cards .card img {
+  height: 460px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.team .cards .card .text {
+  margin-top: 2rem;
+}
+section.team .dots {
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+section.team .dots .dot {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #84848a;
+  opacity: 0.5;
+}
+section.team .dots .dot.active {
+  background-color: #191919;
+  opacity: 1;
+}
+
+section.testimonials {
+  background-color: #f9d783;
+  padding-bottom: 5rem;
+}
+section.testimonials .container {
+  padding: 7rem 0;
+  background-color: #ffffff;
+}
+section.testimonials .container .cards {
+  padding: 7rem;
+  gap: 7rem;
+}
+section.testimonials .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  border: none;
+}
+section.testimonials .container .cards .card .stars {
+  letter-spacing: 0.5rem;
+}
+section.testimonials .container .cards .card .quote {
+  line-height: 2rem;
+}
+section.testimonials .container .cards .card .person {
+  gap: 1rem;
+  align-items: center;
+}
+section.testimonials .container .cards .card .person img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.testimonials .container .cards .card .person .text h3, section.testimonials .container .cards .card .person .text p {
+  margin: 0;
+}
+section.testimonials .container .cards .card .person .text p {
+  color: red;
+}
+
 @media (max-width: 992px) {
   #navbarNav .nav {
     width: 100%;
@@ -501,4 +597,4 @@ section.project-case .grid a.object:hover .btngroup .btn:hover {
   .line {
     display: none;
   }
-}/*# sourceMappingURL=style.css.map */
+}

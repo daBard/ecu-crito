@@ -18,7 +18,6 @@ $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation 
     font-size: 16px;
 }
 
-
 html, body, main {
     background-color: $bg-white;
 
@@ -26,21 +25,34 @@ html, body, main {
         color: $color-prim;
         font-family: $font;
     }
+
+    z-index: -99
 }
 
-header, nav, main, footer {
-        background-color: $bg-color;
+header, nav, main {
+    background-color: $bg-color;
 }
+
+footer {
+    background-color: $color-prim;
+}
+
+section { }
 
 .container {
     max-width: 1520px;
+    z-index: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $headings-font;
     color: $color-prim;
-    font-weight: 700 !important;
+    font-weight: 700;
     text-transform: capitalize;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-weight: 700;
 }
 
 .highlight {
@@ -207,31 +219,29 @@ h1, h2, h3, h4, h5, h6 {
     }
 }    
 
-
 section.hero {
-    /* position: relative; */
+    position: relative;
 
-    .content {
-        h1 {
-            font-weight: 700;
+    .left {
+        gap: 3rem;
+    }
+
+    .right {
+        .showcase-img {
+            width: 50vw;
+            position: relative;
+            bottom: 0;
+            right: -50px;
         }
     }
-
-    .showcase-img {
-        z-index: 1;
-        max-width: 50%;
-        /* position: relative; */
-        /* right: -3rem; */
-
-    }
-
+    
     .btngroup {
         display: flex;
         gap: 1rem;
     }
 
     img.bg-lines {
-        max-width: 50vw;
+        max-width: 50dvw;
         padding: 0;
         position: absolute;
         bottom: 0;
@@ -246,6 +256,13 @@ section.logo-bar {
     .logos {
         justify-content: space-evenly;
         
+        a {
+            transition: scale .3s ease-in-out;
+            &:hover {
+                scale: 1.2;
+            }
+
+        }
     }
 }
 
@@ -409,7 +426,7 @@ section.service-fun {
     }
 
     .lines {
-        width: 40%;
+        max-width: 50dvw;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -540,6 +557,102 @@ section.project-case {
                 }
             }
             
+        }
+    }
+}
+
+section.team {
+    padding: 10rem 0 2rem 0;
+    background-color: $btn-color;
+
+    .cards {
+        gap: 2rem;
+        padding: 5rem 0 3rem 0;
+
+        .card {
+            background-color: transparent;
+            border: none;
+            flex: 1;
+
+            img {
+                height: 460px;
+                object-fit: cover;
+            }
+
+            .text {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .dots {
+        gap: 1.75rem;
+        margin-bottom: 2rem;
+
+        .dot {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background-color: $color-sec;
+        opacity: .5;
+
+            &.active {
+                background-color: $color-prim;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+section.testimonials {
+    background-color: $btn-color;
+    padding-bottom: 5rem;
+
+    .container {
+        padding: 7rem 0;
+        background-color: $bg-white;
+
+        .cards {
+            padding: 7rem;
+            gap: 7rem;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1rem;
+                border: none;
+                
+                .stars {
+                    letter-spacing: .5rem;
+                }
+
+                .quote {
+                    line-height: 2rem;
+                }
+
+                .person {
+                    gap: 1rem;
+                    align-items: center;
+
+                    img {
+                        height: 5rem;
+                        width: 5rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .text {
+                        h3, p {
+                            margin: 0;
+                        }
+
+                        p {
+                            color: $color-highlight;
+                        }
+                    }
+                }
+            }
         }
     }
 }
