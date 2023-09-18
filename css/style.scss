@@ -19,12 +19,17 @@ $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation 
 }
 
 
-html, body, header, nav, main, footer {
+html, body, main {
+    background-color: $bg-white;
+
+    & > * {
+        color: $color-prim;
+        font-family: $font;
+    }
+}
+
+header, nav, main, footer {
         background-color: $bg-color;
-        & > * {
-            color: $color-prim;
-            font-family: $font;
-        }
 }
 
 .container {
