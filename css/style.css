@@ -33,6 +33,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 
+a {
+  text-decoration: none;
+}
+
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   font-weight: 700;
 }
@@ -45,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn {
-  padding: 1rem 1.75rem;
+  padding: 1rem 2rem;
   border-radius: 25px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -60,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
   border-color: #191919;
 }
-.btn.btn-w:hover {
+.btn.btn-w:hover, .btn.btn-w:focus {
   background-color: #191919;
   color: #ffffff;
 }
@@ -68,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f9d783;
   border-color: #f9d783;
 }
-.btn.btn-c:hover {
+.btn.btn-c:hover, .btn.btn-c:focus {
   background-color: #191919;
   border-color: #191919;
   color: #ffffff;
@@ -78,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #191919;
   color: #f0efe9;
 }
-.btn.btn-b:hover {
+.btn.btn-b:hover, .btn.btn-b:focus {
   background-color: transparent;
   color: #191919;
 }
@@ -98,9 +102,25 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
 }
-.btn-round:hover i {
+.btn-round:hover i, .btn-round:focus i {
   background-color: #191919;
   color: #ffffff;
+}
+
+.dots {
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+.dots .dot {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #84848a;
+  opacity: 0.5;
+}
+.dots .dot.active {
+  background-color: #191919;
+  opacity: 1;
 }
 
 #navbarNav section {
@@ -151,10 +171,10 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #191919;
   transition: width 0.3s ease-in-out;
 }
-#navbarNav .navi .navbar-nav .nav-link:hover, #navbarNav .navi .navbar-nav .nav-link.active {
+#navbarNav .navi .navbar-nav .nav-link:hover, #navbarNav .navi .navbar-nav .nav-link:focus, #navbarNav .navi .navbar-nav .nav-link.active {
   color: #191919;
 }
-#navbarNav .navi .navbar-nav .nav-link:hover::after, #navbarNav .navi .navbar-nav .nav-link.active::after {
+#navbarNav .navi .navbar-nav .nav-link:hover::after, #navbarNav .navi .navbar-nav .nav-link:focus::after, #navbarNav .navi .navbar-nav .nav-link.active::after {
   width: 2rem;
 }
 #navbarNav .login {
@@ -196,7 +216,7 @@ section.logo-bar .logos {
 section.logo-bar .logos a {
   transition: scale 0.3s ease-in-out;
 }
-section.logo-bar .logos a:hover {
+section.logo-bar .logos a:hover, section.logo-bar .logos a:focus {
   scale: 1.2;
 }
 
@@ -291,7 +311,6 @@ section.service-fun .cards .card {
   border: none;
   padding: 3rem 2rem;
   justify-content: space-between;
-  text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 section.service-fun .cards .card .line {
@@ -308,10 +327,10 @@ section.service-fun .cards .card .btn-round i {
   background-color: #191919;
   color: #ffffff;
 }
-section.service-fun .cards .card:hover {
+section.service-fun .cards .card:hover, section.service-fun .cards .card:focus {
   background-color: #f9d783;
 }
-section.service-fun .cards .card:hover i {
+section.service-fun .cards .card:hover i, section.service-fun .cards .card:focus i {
   background-color: #ffffff;
   color: #191919;
 }
@@ -336,7 +355,6 @@ section.why-us h2 {
 }
 section.why-us a.object {
   color: #191919;
-  text-decoration: none;
 }
 section.why-us .object {
   gap: 2rem;
@@ -374,7 +392,6 @@ section.project-case .grid {
   gap: 3rem;
 }
 section.project-case .grid a.object {
-  text-decoration: none !important;
   color: #191919 !important;
   height: 500px;
   width: 100%;
@@ -421,7 +438,7 @@ section.project-case .grid a.object:hover img {
 section.project-case .grid a.object:hover .text {
   height: 350px;
 }
-section.project-case .grid a.object:hover .btngroup .btn:hover {
+section.project-case .grid a.object:hover .btngroup .btn:hover, section.project-case .grid a.object:hover .btngroup .btn:focus {
   background-color: transparent;
   color: #191919;
   border: none;
@@ -448,25 +465,10 @@ section.team .cards .card img {
 section.team .cards .card .text {
   margin-top: 2rem;
 }
-section.team .dots {
-  gap: 1.75rem;
-  margin-bottom: 2rem;
-}
-section.team .dots .dot {
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  background-color: #84848a;
-  opacity: 0.5;
-}
-section.team .dots .dot.active {
-  background-color: #191919;
-  opacity: 1;
-}
 
 section.testimonials {
   background-color: #f9d783;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
 }
 section.testimonials .container {
   padding: 7rem 0;
@@ -505,6 +507,155 @@ section.testimonials .container .cards .card .person .text h3, section.testimoni
 }
 section.testimonials .container .cards .card .person .text p {
   color: red;
+}
+
+section.articles-news {
+  background-color: #ffffff;
+  padding: 7rem 0;
+}
+section.articles-news .cards {
+  padding: 3rem 0;
+  gap: 2rem;
+}
+section.articles-news .cards a, section.articles-news .cards a * {
+  transition: all 0.3s ease-in-out;
+}
+section.articles-news .cards a .line {
+  margin: 0 auto;
+  width: 0%;
+  height: 3px;
+  background-color: #f9d783;
+}
+section.articles-news .cards a:hover, section.articles-news .cards a:focus {
+  scale: 1.05;
+}
+section.articles-news .cards a:hover .line, section.articles-news .cards a:focus .line {
+  width: 100%;
+}
+section.articles-news .cards .card {
+  flex: 1;
+  border: none;
+}
+section.articles-news .cards .card .image-wrapper {
+  position: relative;
+}
+section.articles-news .cards .card .image-wrapper img {
+  width: 100%;
+  max-height: 280px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+section.articles-news .cards .card .image-wrapper .date-box {
+  height: 5rem;
+  width: 5rem;
+  background-color: #f9d783;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.articles-news .cards .card .image-wrapper .date-box p.date, section.articles-news .cards .card .image-wrapper .date-box p.month {
+  margin: 0;
+  padding: 0;
+  line-height: 1.05;
+}
+section.articles-news .cards .card .image-wrapper .date-box .date {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+section.articles-news .cards .card .text {
+  margin-top: 2rem;
+}
+
+section.newsletter {
+  padding: 7rem 0;
+  position: relative;
+}
+section.newsletter form {
+  display: flex;
+  gap: 1rem;
+}
+section.newsletter form input[type=email]#email {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+section.newsletter form input[type=email]#email::-moz-placeholder {
+  color: #84848a;
+}
+section.newsletter form input[type=email]#email::placeholder {
+  color: #84848a;
+}
+section.newsletter form input[type=email]#email:hover, section.newsletter form input[type=email]#email:focus {
+  border: 1px solid #191919;
+}
+section.newsletter form input[type=email]#email:focus::-moz-placeholder {
+  color: transparent;
+}
+section.newsletter form input[type=email]#email:focus::placeholder {
+  color: transparent;
+}
+section.newsletter img {
+  position: absolute;
+  right: 0;
+}
+
+footer {
+  background-color: #0e1021;
+  color: #84848a;
+}
+footer section.top {
+  padding: 7rem 0 3rem 0;
+}
+footer section.top .container {
+  gap: 7rem;
+}
+footer section.top .f {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer section.top .f h2 {
+  font-size: 1.75rem;
+  color: #ffffff;
+}
+footer section.top .f a {
+  color: #84848a;
+  display: flex;
+  flex-direction: column;
+}
+footer section.top .f a::after {
+  width: 0px;
+  margin: 0.25rem 0;
+  content: "";
+  border-bottom: 1px solid #ffffff;
+}
+footer section.top .f a, footer section.top .f a::after {
+  transition: all 0.3s ease-in-out;
+}
+footer section.top .f a:hover, footer section.top .f a:focus, footer section.top .f a.active {
+  color: #ffffff;
+}
+footer section.top .f a:hover::after, footer section.top .f a:focus::after, footer section.top .f a.active::after {
+  width: 100%;
+}
+footer section.top .f-1 {
+  flex: 2;
+}
+footer section.top .f-1 img {
+  width: 66%;
+}
+footer section.top .f-1 .text {
+  line-height: 1.75;
+}
+footer section.bottom {
+  padding: 2rem 0;
+  border-top: 1px solid #84848a;
 }
 
 @media (max-width: 992px) {

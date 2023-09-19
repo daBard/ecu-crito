@@ -3,6 +3,7 @@
 
 $bg-color: #f0efe9;
 $bg-white: #ffffff;
+$bg-footer:#0e1021;
 
 $color-prim: #191919;
 $color-sec: #84848a;
@@ -51,6 +52,10 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 }
 
+a {
+    text-decoration: none;
+}
+
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
     font-weight: 700;
 }
@@ -63,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn {
-    padding: 1rem 1.75rem;
+    padding: 1rem 2rem;
     border-radius: 25px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -81,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
         border-color: $color-prim;
 
 
-        &:hover {
+        &:hover, &:focus {
             background-color: $color-prim;
             color: $bg-white;
         }
@@ -91,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
         background-color: $btn-color;
         border-color: $btn-color;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: $color-prim;
             border-color: $color-prim;
             color: $bg-white;
@@ -103,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
         border-color: $color-prim;
         color: $bg-color;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: transparent;
             color: $color-prim
         }
@@ -125,13 +130,31 @@ h1, h2, h3, h4, h5, h6 {
             transition: all .3s ease-in-out;
         }
     
-    &:hover {
+    &:hover, &:focus {
         i {
             background-color: $color-prim;
             color: $bg-white
         }
     }
     
+}
+
+.dots {
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+
+    .dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: $color-sec;
+    opacity: .5;
+
+        &.active {
+            background-color: $color-prim;
+            opacity: 1;
+        }
+    }
 }
 
 #navbarNav {
@@ -197,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
                     transition: width .3s ease-in-out;
                 }
 
-                &:hover, &.active {
+                &:hover, &:focus, &.active {
                     color: $color-prim;
                     &::after {
                         width: 2rem;
@@ -258,7 +281,7 @@ section.logo-bar {
         
         a {
             transition: scale .3s ease-in-out;
-            &:hover {
+            &:hover, &:focus {
                 scale: 1.2;
             }
 
@@ -390,7 +413,6 @@ section.service-fun {
             border: none;
             padding: 3rem 2rem;
             justify-content: space-between;
-            text-decoration: none;
             transition: all .3s ease-in-out;
 
             .line {
@@ -409,7 +431,7 @@ section.service-fun {
                 }
             }
             
-            &:hover {
+            &:hover, &:focus {
                 background-color: $btn-color;
                 i {
                     background-color: $bg-white;
@@ -445,7 +467,6 @@ section.why-us {
 
     a.object {
         color: $color-prim;
-        text-decoration: none;
     }
 
     .object {
@@ -488,7 +509,6 @@ section.project-case {
         gap: 3rem;
 
         a.object {
-            text-decoration: none !important;
             color: $color-prim !important;
             height: 500px;
             width: 100%;
@@ -548,7 +568,7 @@ section.project-case {
 
                 .btngroup {
 
-                    .btn:hover {
+                    .btn:hover, .btn:focus  {
                         
                         background-color: transparent;
                         color: $color-prim;
@@ -584,29 +604,11 @@ section.team {
             }
         }
     }
-
-    .dots {
-        gap: 1.75rem;
-        margin-bottom: 2rem;
-
-        .dot {
-        height: 1rem;
-        width: 1rem;
-        border-radius: 50%;
-        background-color: $color-sec;
-        opacity: .5;
-
-            &.active {
-                background-color: $color-prim;
-                opacity: 1;
-            }
-        }
-    }
 }
 
 section.testimonials {
     background-color: $btn-color;
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
 
     .container {
         padding: 7rem 0;
@@ -656,6 +658,188 @@ section.testimonials {
         }
     }
 }
+
+section.articles-news {
+    background-color: $bg-white;
+    padding: 7rem 0;
+
+    .cards {
+        padding: 3rem 0;
+        gap: 2rem;
+        
+        a {
+            
+            &, * {
+                transition: all .3s ease-in-out;
+            }
+
+            .line {
+                margin: 0 auto;
+                width: 0%;
+                height: 3px;
+                background-color: $btn-color;
+                
+                
+            }
+
+            &:hover, &:focus {
+                scale: 1.05;
+
+                .line {
+                    width: 100%;
+                }
+            }
+        }
+
+        .card {
+            flex: 1;
+            border: none;
+
+            .image-wrapper {
+                position: relative;
+
+                img {
+                    width: 100%;
+                    max-height: 280px;
+                    object-fit: fill;
+                }
+
+                .date-box {
+                    height: 5rem;
+                    width: 5rem;
+                    background-color: $btn-color;
+                    
+                    position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    p.date, p.month {
+                        margin: 0;
+                        padding: 0;
+                        line-height: 1.05;
+                    }
+
+                    .date {
+                        font-size: 1.75rem;
+                        font-weight: 700;
+                    }
+                }
+
+            }
+            
+            .text {
+                margin-top: 2rem;
+            }  
+        }
+    }
+}
+
+section.newsletter {
+    padding: 7rem 0;
+    position: relative;
+    form {
+        display: flex;
+        gap: 1rem;
+
+        input[type=email]#email {
+            padding: 1rem 2rem;
+            background-color: $bg-white;
+            border-radius: 25px;
+            box-sizing: border-box;
+            
+            &::placeholder {
+              color: $color-sec;
+            }
+
+            &:hover, &:focus {
+               border: 1px solid $color-prim;
+            }
+
+            &:focus::placeholder {
+               color: transparent;
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        right: 0;
+    }
+}
+
+footer {
+    background-color: $bg-footer;
+    color: $color-sec;
+    
+
+    section.top {
+        padding: 7rem 0 3rem 0;
+
+        .container {
+            gap: 7rem;
+        }
+        
+        .f {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+    
+            h2 { 
+                font-size: 1.75rem;
+                color: $bg-white;
+            }
+            
+            a {
+                color: $color-sec;
+                display: flex;
+                flex-direction: column;
+
+                &::after {
+                    width: 0px;
+                    margin: .25rem 0;
+                    content: "";
+                    border-bottom: 1px solid $bg-white;
+                }
+
+                &, &::after {
+                    transition: all .3s ease-in-out;
+                }
+
+                &:hover, &:focus, &.active {
+                    color: $bg-white;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+    
+        }
+    
+        .f-1 {
+            flex: 2;
+    
+            img {
+                width: 66%;
+            }
+
+            .text {
+                line-height: 1.75;
+            }
+        }
+    }
+
+    section.bottom {
+        padding: 2rem 0;
+        border-top: 1px solid $color-sec;
+    }
+    
+}
+
 
 @media (max-width: 1520px) {
 
