@@ -1,0 +1,194 @@
+/* IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap');
+
+/* VARIABLES */
+$bg-color: #f0efe9;
+$bg-white: #ffffff;
+$bg-footer:#0e1021;
+
+$color-prim: #191919;
+$color-sec: #84848a;
+$color-highlight:red;
+
+$btn-color: #f9d783;
+$line-color: #dad9d3;
+    
+$font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+/* GLOBAL */
+:root {
+    font-size: 16px;
+}
+
+html, body, main {
+    background-color: $bg-white;
+
+    & > * {
+        color: $color-prim;
+        font-family: $font;
+    }
+
+    z-index: -99;
+}
+
+header, nav, main {
+    background-color: $bg-color;
+}
+
+footer {
+    background-color: $color-prim;
+}
+
+section {
+    padding: 7rem 0;    
+
+    &.m-small {
+        padding: 3rem 0;
+    }
+
+    &.m-none {
+        padding: 0;
+    }
+}
+
+.container {
+    max-width: 1520px;
+    z-index: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font;
+    color: $color-prim;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-weight: 700;
+}
+
+.highlight {
+    color: $color-highlight;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+}
+
+/* COMPONENTS */
+/* Buttons */
+.btn {
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    z-index: 1;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    &.btn-w, &.btn-c, &.btn-b {
+        transition: all .3s ease-in-out;
+    }
+    
+
+    &.btn-w {
+        background-color: transparent;
+        border-color: $color-prim;
+
+
+        &:hover, &:focus {
+            background-color: $color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-c {
+        background-color: $btn-color;
+        border-color: $btn-color;
+
+        &:hover, &:focus {
+            background-color: $color-prim;
+            border-color: $color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-b {
+        background-color: $color-prim;
+        border-color: $color-prim;
+        color: $bg-color;
+
+        &:hover, &:focus {
+            background-color: transparent;
+            color: $color-prim
+        }
+    }
+
+    &::after {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 900;
+
+        margin-left: .5rem;
+        font: var(--fa-font-solid);
+        content: "\e09f";
+    }
+}
+
+.btn-round {
+    gap: 1rem;
+    font-weight: 700;
+        i {
+            padding: 1rem;
+            border: 1px solid $color-prim;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+        }
+    
+    &:hover, &:focus {
+        i {
+            background-color: $color-prim;
+            color: $bg-white
+        }
+    }
+    
+}
+
+/* Dots */
+.dots {
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+
+    .dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: $color-sec;
+    opacity: .5;
+    cursor: pointer;
+
+        &.active, &:hover {
+            background-color: $color-prim;
+            opacity: 1;
+        }
+    }
+}
+
+/* Social buttons */
+.social {
+    gap: 2rem;
+
+    a i {
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            scale: 1.2;
+        }
+    }
+}

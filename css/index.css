@@ -1,0 +1,594 @@
+/* IMPORT */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
+/* VARIABLES */
+/* GLOBAL */
+:root {
+  font-size: 16px;
+}
+
+html, body, main {
+  background-color: #ffffff;
+  z-index: -99;
+}
+html > *, body > *, main > * {
+  color: #191919;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header, nav, main {
+  background-color: #f0efe9;
+}
+
+footer {
+  background-color: #191919;
+}
+
+section {
+  padding: 7rem 0;
+}
+section.m-small {
+  padding: 3rem 0;
+}
+section.m-none {
+  padding: 0;
+}
+
+.container {
+  max-width: 1520px;
+  z-index: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #191919;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-weight: 700;
+}
+
+.highlight {
+  color: red;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+/* COMPONENTS */
+/* Buttons */
+.btn {
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  z-index: 1;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.btn.btn-w, .btn.btn-c, .btn.btn-b {
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn-w {
+  background-color: transparent;
+  border-color: #191919;
+}
+.btn.btn-w:hover, .btn.btn-w:focus {
+  background-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-c {
+  background-color: #f9d783;
+  border-color: #f9d783;
+}
+.btn.btn-c:hover, .btn.btn-c:focus {
+  background-color: #191919;
+  border-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-b {
+  background-color: #191919;
+  border-color: #191919;
+  color: #f0efe9;
+}
+.btn.btn-b:hover, .btn.btn-b:focus {
+  background-color: transparent;
+  color: #191919;
+}
+.btn::after {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  margin-left: 0.5rem;
+  font: var(--fa-font-solid);
+  content: "\e09f";
+}
+
+.btn-round {
+  gap: 1rem;
+  font-weight: 700;
+}
+.btn-round i {
+  padding: 1rem;
+  border: 1px solid #191919;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.btn-round:hover i, .btn-round:focus i {
+  background-color: #191919;
+  color: #ffffff;
+}
+
+/* Dots */
+.dots {
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+.dots .dot {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #84848a;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.dots .dot.active, .dots .dot:hover {
+  background-color: #191919;
+  opacity: 1;
+}
+
+/* Social buttons */
+.social {
+  gap: 2rem;
+}
+.social a i {
+  transition: all 0.3s ease-in-out;
+}
+.social a i:hover {
+  scale: 1.2;
+}
+
+/* MAIN SECTIONS */
+.start-page section.hero {
+  position: relative;
+}
+.start-page section.hero .container .left {
+  gap: 3rem;
+}
+.start-page section.hero .container .right .showcase-img {
+  width: 50vw;
+  position: relative;
+  bottom: 0;
+  right: -50px;
+}
+.start-page section.hero .container .btngroup {
+  display: flex;
+  gap: 1rem;
+}
+.start-page section.hero img.bg-lines {
+  max-width: 50dvw;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.start-page section.logo-bar {
+  background-color: #ffffff;
+}
+.start-page section.logo-bar .logos {
+  justify-content: space-evenly;
+}
+.start-page section.logo-bar .logos a {
+  transition: scale 0.3s ease-in-out;
+}
+.start-page section.logo-bar .logos a:hover, .start-page section.logo-bar .logos a:focus {
+  scale: 1.2;
+}
+
+.start-page section.features {
+  background-color: #ffffff;
+}
+.start-page section.features .container .box {
+  border: 3px solid #f0efe9;
+  padding: 5rem;
+  gap: 5rem;
+}
+.start-page section.features .container .box .col .left .btn {
+  width: 100%;
+  margin-top: 3rem;
+}
+.start-page section.features .container .box .col .grid {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: auto auto;
+  gap: 2rem 5rem;
+}
+.start-page section.features .container .box .col .grid div h3 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.start-page section.about {
+  background-color: #ffffff;
+}
+.start-page section.about .container .row {
+  gap: 5rem;
+}
+.start-page section.about .container .row .left {
+  position: relative;
+}
+.start-page section.about .container .row .left .image-wrapper .image {
+  height: 700px;
+  width: 100%;
+  object-fit: cover;
+  padding-left: 3rem;
+}
+.start-page section.about .container .row .left .image-wrapper .lines {
+  padding-left: 3rem;
+  width: 45%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+.start-page section.about .container .row .left .box {
+  max-width: 60%;
+  padding: 2rem;
+  background-color: lightblue;
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+  box-shadow: -5px 10px 100px 10px #dad9d3;
+}
+.start-page section.about .container .row .left .box p:first-of-type {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.start-page section.about .container .row .left .box p:first-of-type span {
+  font-size: 1rem;
+}
+.start-page section.about .container .row .right {
+  padding: 1rem;
+}
+.start-page section.about .container .row .right h2 {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.start-page section.about .container .row .right .btngroup {
+  gap: 3rem;
+}
+
+.start-page section.service-fun {
+  position: relative;
+}
+.start-page section.service-fun h2 {
+  max-width: 50%;
+}
+.start-page section.service-fun .cards {
+  gap: 2rem;
+  padding: 3rem 0;
+}
+.start-page section.service-fun .cards .card {
+  border: none;
+  padding: 3rem 2rem;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+.start-page section.service-fun .cards .card .line {
+  height: 1px;
+  width: 20%;
+  background-color: #191919;
+  margin-bottom: 2rem;
+}
+.start-page section.service-fun .cards .card .btn-round {
+  display: flex;
+  justify-content: end;
+}
+.start-page section.service-fun .cards .card .btn-round i {
+  background-color: #191919;
+  color: #ffffff;
+}
+.start-page section.service-fun .cards .card:hover, .start-page section.service-fun .cards .card:focus {
+  background-color: #f9d783;
+}
+.start-page section.service-fun .cards .card:hover i, .start-page section.service-fun .cards .card:focus i {
+  background-color: #ffffff;
+  color: #191919;
+}
+.start-page section.service-fun .btngroup .btn {
+  width: fit-content;
+}
+.start-page section.service-fun .lines {
+  max-width: 50dvw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.start-page section.why-us {
+  background-color: #ffffff;
+  position: relative;
+  padding-bottom: 0;
+}
+.start-page section.why-us .box {
+  width: 55%;
+  height: 60%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #f0efe9;
+}
+.start-page section.why-us .left {
+  flex: 2;
+}
+.start-page section.why-us .left h2 {
+  margin: 2rem 0;
+}
+.start-page section.why-us .left .objects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.start-page section.why-us .left .objects a.object {
+  color: #191919;
+  gap: 2rem;
+  justify-content: start;
+  align-items: center;
+}
+.start-page section.why-us .left .objects a.object .icon {
+  height: 4.25rem;
+  width: 4.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dad9d3;
+  border-radius: 50%;
+}
+.start-page section.why-us .left .objects a.object:hover .icon, .start-page section.why-us .left .objects a.object:focus .icon {
+  border-color: transparent;
+  background-color: #191919;
+  color: #ffffff;
+}
+.start-page section.why-us .left .objects a.object .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1rem;
+}
+.start-page section.why-us .left .objects a.object .text h3, .start-page section.why-us .left .objects a.object .text p {
+  margin: 0;
+}
+.start-page section.why-us .right {
+  flex: 3;
+}
+.start-page section.why-us .right .image-wrapper {
+  padding-top: 4rem;
+  width: 100%;
+}
+.start-page section.why-us .right .image-wrapper img {
+  width: 700px;
+  height: 550px;
+  float: right;
+  object-fit: cover;
+  position: relative;
+  z-index: 5;
+}
+
+.start-page section.project-case {
+  background-color: #ffffff;
+}
+.start-page section.project-case .grid {
+  width: 100%;
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 450px 450px;
+  gap: 3rem;
+}
+.start-page section.project-case .grid a.object {
+  color: #191919 !important;
+  height: 500px;
+  width: 100%;
+}
+.start-page section.project-case .grid a.object *, .start-page section.project-case .grid a.object > * {
+  transition: all 0.4s;
+}
+.start-page section.project-case .grid a.object img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+.start-page section.project-case .grid a.object h3 {
+  align-self: start;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dad9d3;
+  text-transform: none;
+}
+.start-page section.project-case .grid a.object .text {
+  width: 100%;
+  height: 0px;
+  display: block;
+  overflow: hidden;
+}
+.start-page section.project-case .grid a.object .btngroup {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: end;
+}
+.start-page section.project-case .grid a.object .btngroup .btn {
+  border: none;
+  padding: 0;
+}
+.start-page section.project-case .grid a.object:hover h3 {
+  margin-top: 1rem;
+}
+.start-page section.project-case .grid a.object:hover img {
+  height: 0px;
+  display: block;
+}
+.start-page section.project-case .grid a.object:hover .text {
+  height: 350px;
+}
+.start-page section.project-case .grid a.object:hover .btngroup .btn:hover, .start-page section.project-case .grid a.object:hover .btngroup .btn:focus {
+  background-color: transparent;
+  color: #191919;
+  border: none;
+}
+
+.start-page section.team {
+  background-color: #f9d783;
+}
+.start-page section.team .cards {
+  gap: 2rem;
+  padding: 5rem 0 3rem 0;
+}
+.start-page section.team .cards .card {
+  background-color: transparent;
+  border: none;
+  flex: 1;
+}
+.start-page section.team .cards .card img {
+  height: 460px;
+  object-fit: cover;
+}
+.start-page section.team .cards .card .text {
+  margin-top: 2rem;
+}
+
+.start-page section.testimonials {
+  background-color: #f9d783;
+}
+.start-page section.testimonials .container {
+  padding: 7rem 0;
+  background-color: #ffffff;
+}
+.start-page section.testimonials .container .cards {
+  padding: 7rem;
+  gap: 7rem;
+}
+.start-page section.testimonials .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  border: none;
+}
+.start-page section.testimonials .container .cards .card .stars {
+  letter-spacing: 0.5rem;
+}
+.start-page section.testimonials .container .cards .card .quote {
+  line-height: 2rem;
+}
+.start-page section.testimonials .container .cards .card .person {
+  gap: 1rem;
+  align-items: center;
+}
+.start-page section.testimonials .container .cards .card .person img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.start-page section.testimonials .container .cards .card .person .text h3, .start-page section.testimonials .container .cards .card .person .text p {
+  margin: 0;
+}
+.start-page section.testimonials .container .cards .card .person .text p {
+  color: red;
+}
+
+.start-page section.articles-news {
+  background-color: #ffffff;
+}
+.start-page section.articles-news .cards {
+  padding: 3rem 0;
+  gap: 2rem;
+}
+.start-page section.articles-news .cards a, .start-page section.articles-news .cards a * {
+  transition: all 0.3s ease-in-out;
+}
+.start-page section.articles-news .cards a .line {
+  margin: 0 auto;
+  width: 0%;
+  height: 3px;
+  background-color: #f9d783;
+}
+.start-page section.articles-news .cards a:hover, .start-page section.articles-news .cards a:focus {
+  scale: 1.05;
+}
+.start-page section.articles-news .cards a:hover .line, .start-page section.articles-news .cards a:focus .line {
+  width: 100%;
+}
+.start-page section.articles-news .cards .card {
+  flex: 1;
+  border: none;
+}
+.start-page section.articles-news .cards .card .image-wrapper {
+  position: relative;
+}
+.start-page section.articles-news .cards .card .image-wrapper img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: fill;
+}
+.start-page section.articles-news .cards .card .image-wrapper .date-box {
+  height: 5rem;
+  width: 5rem;
+  background-color: #f9d783;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start-page section.articles-news .cards .card .image-wrapper .date-box p.date, .start-page section.articles-news .cards .card .image-wrapper .date-box p.month {
+  margin: 0;
+  padding: 0;
+  line-height: 1.05;
+}
+.start-page section.articles-news .cards .card .image-wrapper .date-box .date {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.start-page section.articles-news .cards .card .text {
+  margin-top: 2rem;
+}
+
+.start-page section.newsletter {
+  position: relative;
+}
+.start-page section.newsletter form {
+  display: flex;
+  gap: 1rem;
+}
+.start-page section.newsletter form input[type=email]#email {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.start-page section.newsletter form input[type=email]#email::placeholder {
+  color: #84848a;
+}
+.start-page section.newsletter form input[type=email]#email:hover, .start-page section.newsletter form input[type=email]#email:focus {
+  border: 1px solid #191919;
+}
+.start-page section.newsletter form input[type=email]#email:focus::placeholder {
+  color: transparent;
+}
+.start-page section.newsletter img {
+  position: absolute;
+  right: 0;
+}
+
+/* MEDIA QUERIES */
