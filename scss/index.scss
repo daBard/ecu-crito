@@ -1,6 +1,6 @@
 @import "utilities.scss";
 
-/* MAIN SECTIONS */
+/* MAIN.START-PAGE SECTIONS */
 .start-page section.hero {
     position: relative;
 
@@ -8,9 +8,11 @@
 
         .left {
             gap: 3rem;
+            flex: 1;
         }
 
         .right {
+            flex: 1;
             .showcase-img {
                 width: 50vw;
                 position: relative;
@@ -118,7 +120,7 @@
                 }
 
                 .box {
-                    max-width: 60%;
+                    width: 60%;
                     padding: 2rem;
                     background-color: lightblue;
                     position: absolute;
@@ -302,9 +304,10 @@
         width: 100%;
         margin: 5rem 0;
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 450px 450px;
         gap: 3rem;
+        grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+        grid-template-rows: calc(500px - 1.5rem) calc(500px - 1.5rem);
+        
 
         a.object {
             color: $color-prim !important;
@@ -409,6 +412,7 @@
     .container {
         padding: 7rem 0;
         background-color: $bg-white;
+        align-items: center;
 
         .cards {
             padding: 7rem;
@@ -457,6 +461,11 @@
 
 .start-page section.articles-news {
     background-color: $bg-white;
+
+    .top {
+        justify-content:space-between;
+        align-items: end;
+    }
 
     .cards {
         padding: 3rem 0;
@@ -535,26 +544,32 @@
 
 .start-page section.newsletter {
     position: relative;
-    form {
-        display: flex;
-        gap: 1rem;
 
-        input[type=email]#email {
-            padding: 1rem 2rem;
-            background-color: $bg-white;
-            border-radius: 25px;
-            box-sizing: border-box;
-            
-            &::placeholder {
-              color: $color-sec;
-            }
+    .container {
+        justify-content: space-between;
+        align-items: center;
 
-            &:hover, &:focus {
-               border: 1px solid $color-prim;
-            }
+        form {
+            display: flex;
+            gap: 1rem;
 
-            &:focus::placeholder {
-               color: transparent;
+            input[type=email]#email {
+                padding: 1rem 2rem;
+                background-color: $bg-white;
+                border-radius: 25px;
+                box-sizing: border-box;
+                
+                &::placeholder {
+                color: $color-sec;
+                }
+
+                &:hover, &:focus {
+                border: 1px solid $color-prim;
+                }
+
+                &:focus::placeholder {
+                color: transparent;
+                }
             }
         }
     }
@@ -566,15 +581,246 @@
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1520px) {
+@media (max-width: 1590px) {
+    /* SECTION.HERO 1590 */
+    .start-page section.hero .container .right .showcase-img {
+        right: 0;
+    }
 
+
+}
+
+@media (max-width: 1520px) {
+    /* SECTION.HERO 1520 */
+    .start-page section.hero .container {
+        .right {
+
+            position: relative;
+            .showcase-img {
+                position: absolute;
+            }
+        }
+
+        .left {
+            gap: 0;
+
+            .btngroup {
+                padding-bottom: 3rem;
+            }
+        }
+    }
+
+    /* SECTION SERVICE 1520 */
+    .start-page section.service-fun {
+        h2 {
+            max-width: 100%;
+        }
+
+        .cards {
+            flex-wrap: wrap;
+
+            .card {
+                width: calc(50% - 1.5rem);
+            }
+        }
+    }
+
+     /* SECTION ARTICLES-NEWS 1520 */
+     .start-page section.articles-news {
+        .top {
+            flex-direction: column;
+            align-items: start;
+
+            .btngroup {
+                padding-top: 3rem;
+            }
+        }
+
+        .cards {
+            flex-wrap: wrap;
+
+            .card {
+                flex-basis: 45%;
+
+                .image-wrapper img {
+                    object-fit: cover;
+                    aspect-ratio: 3 / 2;
+                }
+
+                &:first-child {
+                    flex-basis: 100%;
+                    
+                    .image-wrapper img {
+                        max-height: 100%;
+                    }
+                    
+                }
+            }
+        }
+    }
 }
 
 
 @media (max-width: 992px) { 
+    /* SECTION HERO 992 */
+    .start-page section.hero .container .right {
+        display: none;
+    }
 
+    /* SECTION ABOUT 992 */
+    .start-page section.about .container .row {
+        flex-wrap: wrap-reverse;
+
+        .left {
+            padding: 0;
+            .image-wrapper {
+                .image, .lines {
+                    padding-left: 0;
+                }
+
+                .lines {
+                    width: 33%;
+                }
+            }
+
+            .box {
+                width: 100%;
+                bottom: 0;
+                box-shadow: none;
+            }
+        }
+    }
+
+    /* SECTION WHY US 992 */
+    .start-page section.why-us {
+    
+        .right, .box {
+            display: none;
+        }
+
+        .left .objects {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    /* SECTION PROJECTS 992 */
+    .start-page section.project-case {
+
+        .highlight, h2 {
+            align-self: start;
+        }
+
+        .grid {
+            grid-template-columns: 100%;
+            grid-template-rows: auto;
+            
+        }
+    }
+
+    /* SECTION TEAM 992 */
+    .start-page section.team .container {
+        .top {
+            flex-direction: column;
+            
+            .text {
+                align-self: start;
+            }
+
+            .btngroup {
+                padding-top: 3rem;
+            }
+        }
+
+        .cards {
+            flex-wrap: wrap;
+
+            .card {
+                flex-basis: 33%;
+            }
+        }
+    }
+
+    /* SECTION TESTIMONIALS 992 */
+    .start-page section.testimonials .container {
+        padding: 7rem 3rem;
+        
+        .highlight, h2 {
+            align-self: start;
+        }
+
+        .cards {
+            padding: 3rem 0;
+            gap: 3rem;
+            flex-direction: column;
+
+            .card {
+                gap: 0;
+                padding: 0 3rem;
+                align-items: center;
+
+                .stars {
+                    align-self: center;
+                }
+
+                .quote {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    /* SECTION NEWSLETTER 992 */
+    .start-page section.newsletter .container {
+        flex-direction: column;
+        align-items: start;
+        gap: 3rem;
+
+        form {
+            gap: 0;
+
+            :not(:first-child) {
+                margin-right: 3rem;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) { 
+    /* SECTION FEATURES 768 */
+    .start-page section.features {
+        .container .box {
+            flex-direction: column;
+            gap: 3rem;
 
+            .col .grid {
+                grid-template-columns: 100%;
+                grid-template-rows: auto;
+            }
+       }
+    }
+    
+    /* SECTION SERVICE 768 */
+    .start-page section.service-fun {
+    
+        .cards {
+            .card {
+                width: 100%;
+            }
+        }
+    }
+
+    /* SECTION NEWSLETTER */
+    .start-page section.newsletter .container {
+        form {
+            flex-direction: column;
+            gap: 0rem;
+
+            :not(:first-child) {
+                margin-right: 0;
+                margin-bottom: 3rem;
+            }
+        }
+    }
 }
