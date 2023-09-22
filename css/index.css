@@ -635,6 +635,10 @@ a {
   .start-page section.service-fun .cards .card {
     width: calc(50% - 1.5rem);
   }
+  /* SECTION TESTIMONIALS 1520 */
+  .start-page section.testimonials {
+    padding: 0 0 7rem 0;
+  }
   /* SECTION ARTICLES-NEWS 1520 */
   .start-page section.articles-news .top {
     flex-direction: column;
@@ -659,6 +663,18 @@ a {
   .start-page section.articles-news .cards .card:first-child .image-wrapper img {
     max-height: 100%;
   }
+  /* SECTION NEWSLETTER 1520 */
+  .start-page section.newsletter .container {
+    flex-direction: column;
+    align-items: start;
+    gap: 3rem;
+  }
+  .start-page section.newsletter .container form {
+    gap: 0;
+  }
+  .start-page section.newsletter .container form :not(:first-child) {
+    margin-right: 3rem;
+  }
 }
 @media (max-width: 992px) {
   /* SECTION HERO 992 */
@@ -668,6 +684,9 @@ a {
   /* SECTION ABOUT 992 */
   .start-page section.about .container .row {
     flex-wrap: wrap-reverse;
+  }
+  .start-page section.about .container .row .right .text {
+    margin: 1rem 0;
   }
   .start-page section.about .container .row .left {
     padding: 0;
@@ -699,6 +718,8 @@ a {
   .start-page section.project-case .grid {
     grid-template-columns: 100%;
     grid-template-rows: auto;
+    gap: 1rem 0;
+    margin: 1rem 0;
   }
   /* SECTION TEAM 992 */
   .start-page section.team .container .top {
@@ -739,18 +760,6 @@ a {
   .start-page section.testimonials .container .cards .card .quote {
     text-align: center;
   }
-  /* SECTION NEWSLETTER 992 */
-  .start-page section.newsletter .container {
-    flex-direction: column;
-    align-items: start;
-    gap: 3rem;
-  }
-  .start-page section.newsletter .container form {
-    gap: 0;
-  }
-  .start-page section.newsletter .container form :not(:first-child) {
-    margin-right: 3rem;
-  }
 }
 @media (max-width: 768px) {
   /* SECTION FEATURES 768 */
@@ -759,14 +768,22 @@ a {
     gap: 3rem;
   }
   .start-page section.features .container .box .col .grid {
-    grid-template-columns: 100%;
+    grid-template-columns: 45% 45%;
     grid-template-rows: auto;
+    gap: 2rem;
   }
   /* SECTION SERVICE 768 */
   .start-page section.service-fun .cards .card {
     width: 100%;
   }
-  /* SECTION NEWSLETTER */
+  /* SECTION ARTICLES-NEWS 768 */
+  .start-page section.articles-news .container .cards {
+    gap: 2rem 0;
+  }
+  .start-page section.articles-news .container .cards .card {
+    flex-basis: 100%;
+  }
+  /* SECTION NEWSLETTER 768 */
   .start-page section.newsletter .container form {
     flex-direction: column;
     gap: 0rem;
@@ -774,5 +791,61 @@ a {
   .start-page section.newsletter .container form :not(:first-child) {
     margin-right: 0;
     margin-bottom: 3rem;
+  }
+  .start-page section.newsletter img {
+    bottom: 33%;
+  }
+}
+@media (max-width: 576px) {
+  /* GLOBAL 576*/
+  :root {
+    font-size: 14px;
+  }
+  .btn {
+    padding: 1rem 2rem;
+  }
+  .btn::after {
+    display: none;
+  }
+  section {
+    padding: 3rem 0;
+  }
+  /* SECTION FEATURES 576 */
+  .start-page section.features .container .box {
+    padding: 3rem;
+  }
+  .start-page section.features .container .box .col .grid {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 2rem 0;
+  }
+  /* SECTION ABOUT 576 */
+  .start-page section.about .container {
+    padding: 0;
+  }
+  .start-page section.about .container .row .right {
+    padding: 0 2rem;
+  }
+  /* SECTION TEAM 576 */
+  .start-page section.team .container .cards .card {
+    flex-basis: 100%;
+  }
+  /* SECTION TESTIMONIALS 576 */
+  .start-page section.testimonials .container {
+    padding: 3rem 1rem;
+  }
+  /* SECTION ARTICLES-NEWS 576 */
+  .start-page section.articles-news .container .top .btngroup {
+    padding: 1rem 0;
+  }
+  .start-page section.articles-news .container .cards .card {
+    flex-basis: 100%;
+  }
+  /* SECTION NEWSLETTER 576 */
+  .start-page section.newsletter .container {
+    gap: 2rem 0;
+  }
+  .start-page section.newsletter .container #email {
+    z-index: 5;
   }
 }/*# sourceMappingURL=index.css.map */

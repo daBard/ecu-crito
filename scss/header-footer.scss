@@ -214,6 +214,14 @@ footer {
         padding: 0 3rem;
     }
     
+    /* HEADER 1520 */
+    header {
+        .address {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     /* FOOTER 1520 */
     footer {
         section.top {
@@ -263,7 +271,6 @@ footer {
         }
 
         .contact {
-            grid-area: contact;
             justify-content: space-evenly;
             
             & div {
@@ -278,11 +285,6 @@ footer {
                     }
                 }
             }
-        }
-
-        .address {
-            display: flex;
-            flex-direction: column;
         }
 
         .social {
@@ -348,19 +350,8 @@ footer {
                                 flex-wrap: nowrap;
                                 border: none;
                                 padding: 0;
-                                flex: 3;
+                                flex: 1;
 
-                                &:first-child {
-                                    flex: 9;
-                                }
-
-                                &:last-child {
-                                    width: 100%;
-                                    margin-top: 1rem;
-                                    .address {
-                                        flex-direction: row;
-                                    }
-                                }
                             }
 
                             & i {
@@ -385,9 +376,8 @@ footer {
                     
                     .navbar-nav {
                         width: 100%;
-                        display: grid;
-                        grid-template-columns: auto auto;
-                        gap: 0;
+                        justify-content: center;
+                        gap: 3rem;
 
                         .nav-item {
                             padding: calc(var(--bs-navbar-nav-link-padding-x)*.5) var(--bs-navbar-nav-link-padding-x);
@@ -413,21 +403,15 @@ footer {
             }
         }
     }
+
     /* FOOTER 768 */
     footer {
 
         section.top .container {
             grid-template-areas:
-            'f-2' 
-            'f-3'
-            'f-4'
-            'f-5'
-            'f-1';
-
-            .f-1 {
-                flex-direction: column;
-            }
-
+            'f-1 f-1'
+            'f-2 f-3'
+            'f-4 f-5';
         }
 
         section.bottom {
@@ -470,15 +454,15 @@ footer {
                                 flex-wrap: nowrap;
                                 border: none;
                                 padding: 0;
-                                flex: 3;
+                                flex-basis: 100%;
+                                margin-top: 1rem;
 
                                 &:first-child {
-                                    flex: 9;
+                                    margin-top: 0;
                                 }
 
                                 &:last-child {
-                                    width: 100%;
-                                    margin-top: 1rem;
+                                    
                                     .address {
                                         flex-direction: row;
                                     }
@@ -509,7 +493,7 @@ footer {
                         width: 100%;
                         display: grid;
                         grid-template-columns: auto auto;
-                        gap: 0;
+                        gap: 0 3rem;
 
                         .nav-item {
                             padding: calc(var(--bs-navbar-nav-link-padding-x)*.5) var(--bs-navbar-nav-link-padding-x);

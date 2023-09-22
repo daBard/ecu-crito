@@ -149,7 +149,6 @@
 
                 .btngroup {
                     gap: 3rem;
-
                 }
             }
         }   
@@ -625,6 +624,11 @@
         }
     }
 
+    /* SECTION TESTIMONIALS 1520 */
+    .start-page section.testimonials {
+        padding: 0 0 7rem 0;
+    }
+
      /* SECTION ARTICLES-NEWS 1520 */
      .start-page section.articles-news {
         .top {
@@ -658,6 +662,21 @@
             }
         }
     }
+
+    /* SECTION NEWSLETTER 1520 */
+    .start-page section.newsletter .container {
+        flex-direction: column;
+        align-items: start;
+        gap: 3rem;
+
+        form {
+            gap: 0;
+
+            :not(:first-child) {
+                margin-right: 3rem;
+            }
+        }
+    }
 }
 
 
@@ -670,6 +689,12 @@
     /* SECTION ABOUT 992 */
     .start-page section.about .container .row {
         flex-wrap: wrap-reverse;
+
+        .right {
+            .text {
+                margin: 1rem 0;
+            }
+        }
 
         .left {
             padding: 0;
@@ -715,7 +740,8 @@
         .grid {
             grid-template-columns: 100%;
             grid-template-rows: auto;
-            
+            gap: 1rem 0;
+            margin: 1rem 0;
         }
     }
 
@@ -770,21 +796,6 @@
             }
         }
     }
-
-    /* SECTION NEWSLETTER 992 */
-    .start-page section.newsletter .container {
-        flex-direction: column;
-        align-items: start;
-        gap: 3rem;
-
-        form {
-            gap: 0;
-
-            :not(:first-child) {
-                margin-right: 3rem;
-            }
-        }
-    }
 }
 
 @media (max-width: 768px) { 
@@ -795,8 +806,9 @@
             gap: 3rem;
 
             .col .grid {
-                grid-template-columns: 100%;
+                grid-template-columns: 45% 45%;
                 grid-template-rows: auto;
+                gap: 2rem;
             }
        }
     }
@@ -811,16 +823,109 @@
         }
     }
 
-    /* SECTION NEWSLETTER */
-    .start-page section.newsletter .container {
-        form {
-            flex-direction: column;
-            gap: 0rem;
+    /* SECTION ARTICLES-NEWS 768 */
+    .start-page section.articles-news .container {
+        .cards {
+            gap: 2rem 0;
 
-            :not(:first-child) {
-                margin-right: 0;
-                margin-bottom: 3rem;
+            .card {
+                flex-basis: 100%;
+            }
+        }
+     }
+
+    /* SECTION NEWSLETTER 768 */
+    .start-page section.newsletter {
+        .container {
+            form {
+                flex-direction: column;
+                gap: 0rem;
+
+                :not(:first-child) {
+                    margin-right: 0;
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+        img {
+            bottom: 33%;
+        }
+    }
+}
+
+@media (max-width: 576px) { 
+    /* GLOBAL 576*/
+    :root {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    /* SECTION FEATURES 576 */
+    .start-page section.features .container {
+     .box {
+        padding: 3rem;
+
+            .col .grid {
+                grid-template-columns: 100%;
+                grid-template-rows: auto;
+                gap: 2rem 0;
             }
         }
     }
+
+    /* SECTION ABOUT 576 */
+    .start-page section.about .container {
+       padding: 0;
+
+        .row .right {
+            padding: 0 2rem;
+        }
+    }
+
+    /* SECTION TEAM 576 */
+    .start-page section.team .container {
+        
+        .cards {
+            .card {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+     /* SECTION TESTIMONIALS 576 */
+     .start-page section.testimonials .container {
+        padding: 3rem 1rem;
+     }
+
+     /* SECTION ARTICLES-NEWS 576 */
+     .start-page section.articles-news .container {
+        .top .btngroup {
+            padding: 1rem 0;
+        }
+
+        .cards {
+            .card {
+                flex-basis: 100%;
+            }
+        }
+     }
+
+     /* SECTION NEWSLETTER 576 */
+     .start-page section.newsletter .container {
+        gap: 2rem 0;
+        #email {
+            z-index: 5;    
+        }
+     }
 }

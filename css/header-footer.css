@@ -312,6 +312,11 @@ footer section.bottom .social a {
   .container {
     padding: 0 3rem;
   }
+  /* HEADER 1520 */
+  header .address {
+    display: flex;
+    flex-direction: column;
+  }
   /* FOOTER 1520 */
   footer section.top {
     padding-top: 3rem;
@@ -342,7 +347,6 @@ footer section.bottom .social a {
     grid-template-areas: "contact contact contact contact contact contact contact" "line line line line line line line" "navi navi navi social social social login";
   }
   header .contact {
-    grid-area: contact;
     justify-content: space-evenly;
   }
   header .contact div {
@@ -354,10 +358,6 @@ footer section.bottom .social a {
   }
   header .contact div > div i {
     padding-right: var(--bs-navbar-nav-link-padding-x);
-  }
-  header .address {
-    display: flex;
-    flex-direction: column;
   }
   header .social {
     justify-self: center;
@@ -400,17 +400,7 @@ footer section.bottom .social a {
     flex-wrap: nowrap;
     border: none;
     padding: 0;
-    flex: 3;
-  }
-  header #navbarNav .nav .contact div div:first-child {
-    flex: 9;
-  }
-  header #navbarNav .nav .contact div div:last-child {
-    width: 100%;
-    margin-top: 1rem;
-  }
-  header #navbarNav .nav .contact div div:last-child .address {
-    flex-direction: row;
+    flex: 1;
   }
   header #navbarNav .nav .contact div i {
     padding-right: calc(var(--bs-navbar-nav-link-padding-x) * 1.5);
@@ -429,9 +419,8 @@ footer section.bottom .social a {
   }
   header #navbarNav .nav .navi .navbar-nav {
     width: 100%;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 0;
+    justify-content: center;
+    gap: 3rem;
   }
   header #navbarNav .nav .navi .navbar-nav .nav-item {
     padding: calc(var(--bs-navbar-nav-link-padding-x) * 0.5) var(--bs-navbar-nav-link-padding-x);
@@ -449,10 +438,7 @@ footer section.bottom .social a {
   }
   /* FOOTER 768 */
   footer section.top .container {
-    grid-template-areas: "f-2" "f-3" "f-4" "f-5" "f-1";
-  }
-  footer section.top .container .f-1 {
-    flex-direction: column;
+    grid-template-areas: "f-1 f-1" "f-2 f-3" "f-4 f-5";
   }
   footer section.bottom .container {
     flex-direction: column-reverse;
@@ -481,14 +467,11 @@ footer section.bottom .social a {
     flex-wrap: nowrap;
     border: none;
     padding: 0;
-    flex: 3;
+    flex-basis: 100%;
+    margin-top: 1rem;
   }
   header #navbarNav .nav .contact div div:first-child {
-    flex: 9;
-  }
-  header #navbarNav .nav .contact div div:last-child {
-    width: 100%;
-    margin-top: 1rem;
+    margin-top: 0;
   }
   header #navbarNav .nav .contact div div:last-child .address {
     flex-direction: row;
@@ -512,7 +495,7 @@ footer section.bottom .social a {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    gap: 0;
+    gap: 0 3rem;
   }
   header #navbarNav .nav .navi .navbar-nav .nav-item {
     padding: calc(var(--bs-navbar-nav-link-padding-x) * 0.5) var(--bs-navbar-nav-link-padding-x);
