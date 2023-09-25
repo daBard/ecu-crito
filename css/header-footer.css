@@ -37,6 +37,8 @@ section.m-none {
 .container {
   max-width: 1520px;
   z-index: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -308,10 +310,6 @@ footer section.bottom .social a {
 
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
-  /* GLOBAL */
-  .container {
-    padding: 0 3rem;
-  }
   /* HEADER 1520 */
   header .address {
     display: flex;
@@ -522,4 +520,4 @@ footer section.bottom .social a {
     flex-direction: column-reverse;
     gap: 3rem;
   }
-}/*# sourceMappingURL=header-footer.css.map */
+}

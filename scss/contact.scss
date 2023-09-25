@@ -1,0 +1,198 @@
+@import "utilities.scss";
+
+
+
+/* MAIN.CONTACT-PAGE SECTIONS */
+.contact-page section.hero {
+    position: relative;
+
+    img.bg-lines {
+        max-width: 40dvw;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .container {
+        justify-content: center;
+        align-items: start;
+    }
+}
+
+.contact-page section.information { 
+    background-color: $bg-white;
+    padding-bottom: 1.5rem;
+
+    .container {
+        
+        .boxes {
+            display: flex;
+            gap: 2rem;
+            
+            .box {
+                padding: 1.5rem 3rem;
+                border: 1px solid $bg-color;
+                flex: 1;
+                display: flex;
+                gap: 1rem;
+                align-items: start;
+
+                .icon {
+                    height: 3rem;
+                    width: 3rem;
+                    background-color: $color-prim;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $bg-white;
+                }
+
+                .text {
+                    h2 {
+                        font-size: 1.25rem;
+                        margin: .5rem 0 1rem 0;
+                        text-transform: none;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.contact-page section.form {
+    background-color: $bg-white;
+    padding: 1.5rem 0 7rem 0;
+    .container {
+        background-color: $bg-color;
+
+        form {
+            padding: 7rem;
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                
+                legend {
+                    width: 25%;
+                    h2 {
+                    text-transform: none;
+                    }
+                }
+                    
+                label, input, textarea, button {
+                    width: 100%;
+                    
+                }
+
+                label {
+                    position: relative;
+
+                    input, textarea {
+                        background-color: $bg-white;
+                        border-radius: 25px;
+                        padding: 1rem 3rem;
+                        border: 1px solid transparent;
+
+                        &:hover, &:focus {
+                            border: 1px solid $color-prim;
+                        }
+
+                        &:required {
+                            border-color: transparent;
+
+                            &:hover, &:focus {
+                                &:focus:invalid {
+                                    border-color: red;
+
+                                    & + .icon::after {
+                                        content: "\f057";
+                                        color: red; 
+                                    }
+                                }
+                            }
+
+                            &:valid {
+                                border-color: green;
+
+                                & + .icon::after { 
+                                    content: "\f058";
+                                    color: green; 
+                                }
+                            }
+                            
+                        }
+                        
+                        &::placeholder {
+                        color: $color-sec;
+                        }
+        
+                        &:focus::placeholder {
+                        color: transparent;
+                        }
+                    }
+
+                    .icon {
+                        position: absolute;
+                        top: 0;
+                        right: .75rem;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        &::after {
+                            font: var(--fa-font-solid);
+                            font-size: 1.75rem;
+                            content: "";                          
+                        }
+
+                        &.top {
+                            top: .75rem;
+                            align-items: start;
+                        }
+                    }
+                }
+
+
+                button {
+                    margin-top: 2rem;
+                }
+                
+            }
+        }
+    }    
+}
+
+.contact-page section.map {
+    .container {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        background-color: $bg-footer;
+        position: relative;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        iframe {
+            width: 100%;
+        }
+
+        small a {
+            position: absolute;
+            padding: 0 .1rem;
+            bottom: .5rem;
+            left: .1rem;
+            background-color: rgb(255, 255, 255, 0.5);
+        }
+    }
+
+}

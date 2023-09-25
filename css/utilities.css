@@ -37,8 +37,15 @@ section.m-none {
 .container {
   max-width: 1520px;
   z-index: 0;
+  padding: 0;
 }
 
+@media (max-width: 1520px) {
+  /* GLOBAL */
+  .container {
+    padding: 0 3rem;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
@@ -153,4 +160,4 @@ a {
 }
 .social a i:hover {
   scale: 1.2;
-}/*# sourceMappingURL=utilities.css.map */
+}

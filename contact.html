@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Crito - Agency Service</title>
+        <meta name="description" content="This is an assignment for Webutvecklare inom .NET">
+        <meta name="keywords" content="education, webdev, frontend">
+        <meta name="author" content="Crito">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- FONTAWESOME -->
+        <script defer src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="./css/reset.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/header-footer.css">
+        <link rel="stylesheet" href="./css/contact.css">
+    </head>
+
+    <body class="w-100">
+       <header class="w-100">
+            <div class="container w-max">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="/img/logotype.svg" alt="Crito logo" class="">
+                    </a>
+                
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <section class="nav align-items-center">
+                                <div class="contact d-flex">
+                                    <div class="d-flex">
+                                        <div class="d-flex">
+                                            <i class="fa-regular fa-phone-volume"></i>
+                                            <span class="tel">+46 (8) 121 470 50</span>    
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="fa fa-regular fa-envelope"></i>
+                                            <span class="mail">info@crito.com</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="fa-regular fa-location-dot"></i>
+                                            <span class="address"><span>Sveavägen 31,</span> <span>111 34 STOCKHOLM</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="social d-flex">
+                                    <a href="#"><i class="fa-brands fa-facebook fa-lg" alt="Facebook icon"></i></a>
+                                    <a href="#"><i class="fa-brands fa-square-x-twitter fa-lg" alt="Twitter icon"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram fa-lg" alt="Instagram icon"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin fa-lg" alt="LinkedIn icon"></i></a>
+                                </div>
+                                
+                            <div class="navi d-flex">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Service</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">News</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Contact</a>
+                                        </li>
+                                    </ul>
+                            </div>
+                            
+                            <div class="login d-flex">
+                                    <button type="button" id="login-btn" class="btn btn-c">Login</button>
+                            </div>
+
+                            <div class="line"></div>
+
+                        </section>
+                        
+                    </div>
+                </nav>
+            </div>
+       </header>
+        
+        <main class="w-100 contact-page">
+            <section class="hero w-100 m-small">
+                <img src="./img/background-lines.svg" alt="" class="bg-lines">
+                <div class="container d-flex">
+                    <h1>Let's connect</h1>
+                </div>
+            </section>
+            
+            <section class="information w-100">
+                <div class="container">
+                    <div class="boxes">
+                        <div class="box">
+                            <div class="icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="text">
+                                <h2>Visit us</h2>
+                                <p>Sveavägen 31</p>
+                                <p>111 34 STOCKHOLM</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="icon">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div class="text">
+                                <h2>Call us</h2>
+                                <p>+46 (8) 121 470 50</p>
+                                <p>+46 (8) 121 470 51</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="text">
+                                <h2>Email us</h2>
+                                <p>info@crito.com</p>
+                                <p>support@crito.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="form w-100 m-small">
+                <div class="container">
+                    <form action="" id="contact-form">
+                        <fieldset>
+                            <legend><h2>Leave us a message for any information.</h2></legend>
+                            <label for="name">
+                                <input type="text" id="name" name="name" placeholder="Name*" required>
+                                <i class="icon"></i>
+                            </label>
+                            <label for="email">
+                                <input type="email" id="email" name="email" placeholder="Email*" required>
+                                <i class="icon"></i>
+                            </label>
+                            <label for="message">
+                                <textarea id="message" name="message" placeholder="Your message*" rows="4" required></textarea>
+                                <i class="icon top"></i>
+                            </label>
+                            <button type="submit" form="contact-form" value="Send message" class="btn btn-c">Send message</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+
+            <section class="map w-100 m-none">
+                <div class="container">
+                    <iframe width="1520" height="640" src="https://www.openstreetmap.org/export/embed.html?bbox=18.026504516601566%2C59.327016239461855%2C18.09782981872559%2C59.34621073443778&amp;layer=hot&amp;marker=59.33661484265348%2C18.062167167663574"></iframe>
+                    <small><a href="https://www.openstreetmap.org/?mlat=59.33660&amp;mlon=18.06214#map=18/59.33660/18.06214">Visa större karta</a></small>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="w-100">
+            <section class="w-100 top">
+                <div class="container">
+                    <div class="f f-1">
+                        <img src="./img/logotype-white.svg" alt="Crito logo" class="logo">
+                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati voluptas volutptates! Voluptates laborum nam ratione minus necessitatibus, iure praesentium.</p>
+                    </div>
+                    <div class="f f-2">
+                        <h2>Company</h2>
+                        <a href="#">About</a>
+                        <a href="#">Features</a>
+                        <a href="#">Works</a>
+                        <a href="#">Career</a>                    
+                    </div>
+                    <div class="f f-3">
+                        <h2>Help</h2>
+                        <a href="#">Customer Support</a>
+                        <a href="#">Delivery Details</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div class="f f-4">
+                        <h2>Resources</h2>
+                        <a href="#">Free eBooks</a>
+                        <a href="#">Development Tutorial</a>
+                        <a href="#">How to - Blog</a>
+                        <a href="#">Youtube Playlist</a>
+                    </div>
+                    <div class="f f-5">
+                        <h2>Link</h2>
+                        <a href="#">Free eBooks</a>
+                        <a href="#">Development Tutorial</a>
+                        <a href="#">How to - Blog</a>
+                        <a href="#">Youtube Playlist</a>
+                    </div>
+                </div>
+                <img src="./img/background-lines-white-right.svg" alt="" class="lines">
+            </section>
+            <section class="w-100 bottom">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <div class="copyright">© 2023 Crito - Consulting Company Inc. All Rights Reserved.</div>
+                    <div class="social d-flex">
+                        <a href="#"><i class="fa-brands fa-facebook fa-lg" alt="Facebook icon"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-x-twitter fa-lg" alt="Twitter icon"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram fa-lg" alt="Instagram icon"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin fa-lg" alt="LinkedIn icon"></i></a>
+                    </div>
+                </div>
+            </section>
+            
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
