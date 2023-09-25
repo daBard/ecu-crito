@@ -121,7 +121,7 @@
                         </div>
                         <div class="btngroup">
                             <button class="btn btn-c">Get Consulting</button>
-                            <button class="btn btn-w">Learn More</button>
+                            <button class="btn btn-bg">Learn More</button>
                         </div>
                     </div>
                     <div class="right">
@@ -239,7 +239,7 @@
                         </a>
                     </div>
                     <div class="btngroup d-flex justify-content-center">
-                        <button class="btn btn-w">Browse services</button>
+                        <button class="btn btn-bg">Browse services</button>
                     </div>
                 </div>
                 <img src="./img/background-lines-right.svg" alt="" class="lines">
@@ -353,7 +353,7 @@
                             <h2 class="display-3">Experience team members</h2>
                         </div>
                         <div class="btngroup">
-                            <button class="btn btn-w">Browse team</button>
+                            <button class="btn btn-c">Browse team</button>
                         </div>
                     </div>
                     <div class="cards d-flex">
@@ -510,12 +510,18 @@
             </section>
 
             <section class="newsletter">
-                <div class="container d-flex">
-                    <h2 class="display-3">Get news updates by signup</h2>
-                    <form action="">
-                        <label for="email"> </label>
-                        <input type="email" id="email" name="email" placeholder="username@domain.com">
-                        <button class="btn btn-c">Subscribe</button>
+                <div class="container">
+                    <form action="" id="newsletter-form">
+                        <fieldset>
+                            <legend><h2 class="display-3">Get news updates by signup</h2></legend>
+                            <div class="group">
+                                <label for="email">
+                                    <input type="email" id="email" name="email" placeholder="username@domain.com" required>
+                                    <i class="icon"></i>
+                                </label>
+                                <button type="submit" form="newsletter-form" value="Subscribe" class="btn btn-c">Subscribe</button>
+                            </div>
+                        </fieldset>
                     </form>
                 </div>
                 <img src="./img/background-wavy-lines.svg" alt="">

@@ -77,95 +77,25 @@
 
             fieldset {
                 display: flex;
+                gap: 1rem;
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
-                
+
                 legend {
                     width: 25%;
                     h2 {
                     text-transform: none;
                     }
                 }
-                    
+
                 label, input, textarea, button {
                     width: 100%;
-                    
                 }
-
-                label {
-                    position: relative;
-
-                    input, textarea {
-                        background-color: $bg-white;
-                        border-radius: 25px;
-                        padding: 1rem 3rem;
-                        border: 1px solid transparent;
-
-                        &:hover, &:focus {
-                            border: 1px solid $color-prim;
-                        }
-
-                        &:required {
-                            border-color: transparent;
-
-                            &:hover, &:focus {
-                                &:focus:invalid {
-                                    border-color: red;
-
-                                    & + .icon::after {
-                                        content: "\f057";
-                                        color: red; 
-                                    }
-                                }
-                            }
-
-                            &:valid {
-                                border-color: green;
-
-                                & + .icon::after { 
-                                    content: "\f058";
-                                    color: green; 
-                                }
-                            }
-                            
-                        }
-                        
-                        &::placeholder {
-                        color: $color-sec;
-                        }
-        
-                        &:focus::placeholder {
-                        color: transparent;
-                        }
-                    }
-
-                    .icon {
-                        position: absolute;
-                        top: 0;
-                        right: .75rem;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-
-                        &::after {
-                            font: var(--fa-font-solid);
-                            font-size: 1.75rem;
-                            content: "";                          
-                        }
-
-                        &.top {
-                            top: .75rem;
-                            align-items: start;
-                        }
-                    }
-                }
-
 
                 button {
+                    padding: 1rem 2rem;
                     margin-top: 2rem;
                 }
-                
             }
         }
     }    

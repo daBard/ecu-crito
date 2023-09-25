@@ -71,7 +71,7 @@ a {
 /* COMPONENTS */
 /* Buttons */
 .btn {
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 25px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -83,10 +83,18 @@ a {
   transition: all 0.3s ease-in-out;
 }
 .btn.btn-w {
-  background-color: transparent;
+  background-color: #ffffff;
   border-color: #191919;
 }
 .btn.btn-w:hover, .btn.btn-w:focus {
+  background-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-bg {
+  background-color: #f0efe9;
+  border-color: #191919;
+}
+.btn.btn-bg:hover, .btn.btn-bg:focus {
   background-color: #191919;
   color: #ffffff;
 }
@@ -160,6 +168,63 @@ a {
 }
 .social a i:hover {
   scale: 1.2;
+}
+
+/* Forms */
+form fieldset legend {
+  margin: 0;
+}
+form fieldset label {
+  position: relative;
+}
+form fieldset label input, form fieldset label textarea {
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+}
+form fieldset label input:hover, form fieldset label input:focus, form fieldset label textarea:hover, form fieldset label textarea:focus {
+  border: 1px solid #191919;
+}
+form fieldset label input:required, form fieldset label textarea:required {
+  border-color: transparent;
+}
+form fieldset label input:required:hover:focus:invalid, form fieldset label input:required:focus:focus:invalid, form fieldset label textarea:required:hover:focus:invalid, form fieldset label textarea:required:focus:focus:invalid {
+  border-color: red;
+}
+form fieldset label input:required:hover:focus:invalid + .icon::after, form fieldset label input:required:focus:focus:invalid + .icon::after, form fieldset label textarea:required:hover:focus:invalid + .icon::after, form fieldset label textarea:required:focus:focus:invalid + .icon::after {
+  content: "\f057";
+  color: red;
+}
+form fieldset label input:required:valid, form fieldset label textarea:required:valid {
+  border-color: green;
+}
+form fieldset label input:required:valid + .icon::after, form fieldset label textarea:required:valid + .icon::after {
+  content: "\f058";
+  color: green;
+}
+form fieldset label input::placeholder, form fieldset label textarea::placeholder {
+  color: #84848a;
+}
+form fieldset label input:focus::placeholder, form fieldset label textarea:focus::placeholder {
+  color: transparent;
+}
+form fieldset label .icon {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+form fieldset label .icon::after {
+  font: var(--fa-font-solid);
+  font-size: 1.75rem;
+  content: "";
+}
+form fieldset label .icon.top {
+  top: 0.75rem;
+  align-items: start;
 }
 
 /* MAIN.START-PAGE SECTIONS */
@@ -458,6 +523,9 @@ a {
 .start-page section.team {
   background-color: #f9d783;
 }
+.start-page section.team .btn-c {
+  border: 1px solid #191919;
+}
 .start-page section.team .cards {
   gap: 2rem;
   padding: 5rem 0 3rem 0;
@@ -587,24 +655,26 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.start-page section.newsletter .container form {
+.start-page section.newsletter .container form, .start-page section.newsletter .container fieldset {
+  width: 100%;
+}
+.start-page section.newsletter .container form fieldset {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.start-page section.newsletter .container form fieldset legend {
+  flex: 7;
+}
+.start-page section.newsletter .container form fieldset legend h2 {
+  margin: 0;
+}
+.start-page section.newsletter .container form fieldset .group {
+  display: flex;
+  justify-content: end;
+  align-items: center;
   gap: 1rem;
-}
-.start-page section.newsletter .container form input[type=email]#email {
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  border-radius: 25px;
-  box-sizing: border-box;
-}
-.start-page section.newsletter .container form input[type=email]#email::placeholder {
-  color: #84848a;
-}
-.start-page section.newsletter .container form input[type=email]#email:hover, .start-page section.newsletter .container form input[type=email]#email:focus {
-  border: 1px solid #191919;
-}
-.start-page section.newsletter .container form input[type=email]#email:focus::placeholder {
-  color: transparent;
+  flex: 5;
 }
 .start-page section.newsletter img {
   position: absolute;
@@ -676,11 +746,10 @@ a {
     align-items: start;
     gap: 3rem;
   }
-  .start-page section.newsletter .container form {
-    gap: 0;
-  }
-  .start-page section.newsletter .container form :not(:first-child) {
-    margin-right: 3rem;
+  .start-page section.newsletter .container form fieldset {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: start;
   }
 }
 @media (max-width: 992px) {
@@ -791,13 +860,14 @@ a {
     flex-basis: 100%;
   }
   /* SECTION NEWSLETTER 768 */
-  .start-page section.newsletter .container form {
+  .start-page section.newsletter .container form fieldset .group {
     flex-direction: column;
-    gap: 0rem;
+    align-items: start;
+    width: 50dvw;
+    gap: 1.5rem;
   }
-  .start-page section.newsletter .container form :not(:first-child) {
-    margin-right: 0;
-    margin-bottom: 3rem;
+  .start-page section.newsletter .container form fieldset .group label, .start-page section.newsletter .container form fieldset .group input, .start-page section.newsletter .container form fieldset .group button {
+    width: 100%;
   }
   .start-page section.newsletter img {
     bottom: 33%;
@@ -852,7 +922,15 @@ a {
   .start-page section.newsletter .container {
     gap: 2rem 0;
   }
-  .start-page section.newsletter .container #email {
+  .start-page section.newsletter .container form fieldset .group {
+    width: 100%;
+  }
+  .start-page section.newsletter .container form fieldset .group label input {
+    padding: 1rem 2rem;
+    position: relative;
     z-index: 5;
+  }
+  .start-page section.newsletter .container form fieldset .group label .icon {
+    z-index: 10;
   }
 }

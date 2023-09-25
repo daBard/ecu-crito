@@ -91,7 +91,7 @@ a {
 /* COMPONENTS */
 /* Buttons */
 .btn {
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
     border-radius: 25px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -105,9 +105,19 @@ a {
     
 
     &.btn-w {
-        background-color: transparent;
+        background-color: $bg-white;
         border-color: $color-prim;
 
+
+        &:hover, &:focus {
+            background-color: $color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-bg {
+        background-color: $bg-color;
+        border-color: $color-prim;
 
         &:hover, &:focus {
             background-color: $color-prim;
@@ -198,5 +208,82 @@ a {
         &:hover {
             scale: 1.2;
         }
+    }
+}
+
+/* Forms */
+form {
+
+    fieldset {
+        
+        legend { margin: 0; }
+
+        label {
+            position: relative;
+
+            input, textarea {
+                background-color: $bg-white;
+                border-radius: 25px;
+                padding: 1rem 2rem;
+                border: 1px solid transparent;
+
+                &:hover, &:focus {
+                    border: 1px solid $color-prim;
+                }
+
+                &:required {
+                    border-color: transparent;
+
+                    &:hover, &:focus {
+                        &:focus:invalid {
+                            border-color: red;
+
+                            & + .icon::after {
+                                content: "\f057";
+                                color: red; 
+                            }
+                        }
+                    }
+
+                    &:valid {
+                        border-color: green;
+
+                        & + .icon::after { 
+                            content: "\f058";
+                            color: green; 
+                        }
+                    }
+                    
+                }
+                
+                &::placeholder {
+                color: $color-sec;
+                }
+
+                &:focus::placeholder {
+                color: transparent;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 0;
+                right: .75rem;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                &::after {
+                    font: var(--fa-font-solid);
+                    font-size: 1.75rem;
+                    content: "";                          
+                }
+
+                &.top {
+                    top: .75rem;
+                    align-items: start;
+                }
+            }
+        }        
     }
 }

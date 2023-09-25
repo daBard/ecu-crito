@@ -384,6 +384,10 @@
 .start-page section.team {
     background-color: $btn-color;
 
+    .btn-c {
+        border: 1px solid $color-prim;
+    }
+
     .cards {
         gap: 2rem;
         padding: 5rem 0 3rem 0;
@@ -548,27 +552,29 @@
         justify-content: space-between;
         align-items: center;
 
-        form {
+        form, fieldset {
+            width: 100%;
+        }
+
+        form fieldset {
             display: flex;
-            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
 
-            input[type=email]#email {
-                padding: 1rem 2rem;
-                background-color: $bg-white;
-                border-radius: 25px;
-                box-sizing: border-box;
-                
-                &::placeholder {
-                color: $color-sec;
-                }
+            legend {
+                flex: 7;
 
-                &:hover, &:focus {
-                border: 1px solid $color-prim;
+                h2 {
+                    margin: 0;
                 }
+            }
 
-                &:focus::placeholder {
-                color: transparent;
-                }
+            .group { 
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap: 1rem;
+                flex: 5;
             }
         }
     }
@@ -667,12 +673,10 @@
         align-items: start;
         gap: 3rem;
 
-        form {
-            gap: 0;
-
-            :not(:first-child) {
-                margin-right: 3rem;
-            }
+        form fieldset {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: start;
         }
     }
 }
@@ -835,13 +839,16 @@
     /* SECTION NEWSLETTER 768 */
     .start-page section.newsletter {
         .container {
-            form {
-                flex-direction: column;
-                gap: 0rem;
+            form fieldset {
+                .group {
+                    flex-direction: column;
+                    align-items: start;
+                    width: 50dvw;
+                    gap: 1.5rem;
 
-                :not(:first-child) {
-                    margin-right: 0;
-                    margin-bottom: 3rem;
+                    label, input, button {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -922,8 +929,22 @@
      /* SECTION NEWSLETTER 576 */
      .start-page section.newsletter .container {
         gap: 2rem 0;
-        #email {
-            z-index: 5;    
+
+        form fieldset{
+            .group {
+                width: 100%;
+
+                label  {
+                    input {
+                        padding: 1rem 2rem;
+                        position: relative;
+                        z-index: 5;
+                    }
+                    .icon {
+                        z-index: 10;
+                    }
+                }
+            }
         }
      }
 }
