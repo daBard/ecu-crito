@@ -40,12 +40,6 @@ section.m-none {
   padding: 0;
 }
 
-@media (max-width: 1520px) {
-  /* GLOBAL */
-  .container {
-    padding: 0 3rem;
-  }
-}
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
@@ -226,3 +220,25 @@ form fieldset label .icon.top {
   top: 0.75rem;
   align-items: start;
 }
+
+@media (max-width: 1520px) {
+  /* GLOBAL */
+  .container {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 576px) {
+  /* GLOBAL 576*/
+  :root {
+    font-size: 14px;
+  }
+  .btn {
+    padding: 1rem 2rem;
+  }
+  .btn::after {
+    display: none;
+  }
+  section {
+    padding: 3rem 0;
+  }
+}/*# sourceMappingURL=utilities.css.map */

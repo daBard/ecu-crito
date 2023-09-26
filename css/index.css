@@ -40,12 +40,6 @@ section.m-none {
   padding: 0;
 }
 
-@media (max-width: 1520px) {
-  /* GLOBAL */
-  .container {
-    padding: 0 3rem;
-  }
-}
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
@@ -227,6 +221,12 @@ form fieldset label .icon.top {
   align-items: start;
 }
 
+@media (max-width: 1520px) {
+  /* GLOBAL */
+  .container {
+    padding: 0 3rem;
+  }
+}
 /* MAIN.START-PAGE SECTIONS */
 .start-page section.hero {
   position: relative;
@@ -874,19 +874,6 @@ form fieldset label .icon.top {
   }
 }
 @media (max-width: 576px) {
-  /* GLOBAL 576*/
-  :root {
-    font-size: 14px;
-  }
-  .btn {
-    padding: 1rem 2rem;
-  }
-  .btn::after {
-    display: none;
-  }
-  section {
-    padding: 3rem 0;
-  }
   /* SECTION FEATURES 576 */
   .start-page section.features .container .box {
     padding: 3rem;
@@ -933,4 +920,4 @@ form fieldset label .icon.top {
   .start-page section.newsletter .container form fieldset .group label .icon {
     z-index: 10;
   }
-}
+}/*# sourceMappingURL=index.css.map */

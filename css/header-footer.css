@@ -37,10 +37,15 @@ section.m-none {
 .container {
   max-width: 1520px;
   z-index: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 }
 
+@media (max-width: 1520px) {
+  /* GLOBAL */
+  .container {
+    padding: 0 3rem;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
@@ -66,7 +71,7 @@ a {
 /* COMPONENTS */
 /* Buttons */
 .btn {
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 25px;
   cursor: pointer;
   border: 1px solid transparent;
@@ -78,10 +83,18 @@ a {
   transition: all 0.3s ease-in-out;
 }
 .btn.btn-w {
-  background-color: transparent;
+  background-color: #ffffff;
   border-color: #191919;
 }
 .btn.btn-w:hover, .btn.btn-w:focus {
+  background-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-bg {
+  background-color: #f0efe9;
+  border-color: #191919;
+}
+.btn.btn-bg:hover, .btn.btn-bg:focus {
   background-color: #191919;
   color: #ffffff;
 }
@@ -155,6 +168,63 @@ a {
 }
 .social a i:hover {
   scale: 1.2;
+}
+
+/* Forms */
+form fieldset legend {
+  margin: 0;
+}
+form fieldset label {
+  position: relative;
+}
+form fieldset label input, form fieldset label textarea {
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+}
+form fieldset label input:hover, form fieldset label input:focus, form fieldset label textarea:hover, form fieldset label textarea:focus {
+  border: 1px solid #191919;
+}
+form fieldset label input:required, form fieldset label textarea:required {
+  border-color: transparent;
+}
+form fieldset label input:required:hover:focus:invalid, form fieldset label input:required:focus:focus:invalid, form fieldset label textarea:required:hover:focus:invalid, form fieldset label textarea:required:focus:focus:invalid {
+  border-color: red;
+}
+form fieldset label input:required:hover:focus:invalid + .icon::after, form fieldset label input:required:focus:focus:invalid + .icon::after, form fieldset label textarea:required:hover:focus:invalid + .icon::after, form fieldset label textarea:required:focus:focus:invalid + .icon::after {
+  content: "\f057";
+  color: red;
+}
+form fieldset label input:required:valid, form fieldset label textarea:required:valid {
+  border-color: green;
+}
+form fieldset label input:required:valid + .icon::after, form fieldset label textarea:required:valid + .icon::after {
+  content: "\f058";
+  color: green;
+}
+form fieldset label input::placeholder, form fieldset label textarea::placeholder {
+  color: #84848a;
+}
+form fieldset label input:focus::placeholder, form fieldset label textarea:focus::placeholder {
+  color: transparent;
+}
+form fieldset label .icon {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+form fieldset label .icon::after {
+  font: var(--fa-font-solid);
+  font-size: 1.75rem;
+  content: "";
+}
+form fieldset label .icon.top {
+  top: 0.75rem;
+  align-items: start;
 }
 
 /* HEADER */
@@ -520,4 +590,4 @@ footer section.bottom .social a {
     flex-direction: column-reverse;
     gap: 3rem;
   }
-}
+}/*# sourceMappingURL=header-footer.css.map */

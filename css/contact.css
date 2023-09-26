@@ -40,12 +40,6 @@ section.m-none {
   padding: 0;
 }
 
-@media (max-width: 1520px) {
-  /* GLOBAL */
-  .container {
-    padding: 0 3rem;
-  }
-}
 h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: #191919;
@@ -227,6 +221,27 @@ form fieldset label .icon.top {
   align-items: start;
 }
 
+@media (max-width: 1520px) {
+  /* GLOBAL */
+  .container {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 576px) {
+  /* GLOBAL 576*/
+  :root {
+    font-size: 14px;
+  }
+  .btn {
+    padding: 1rem 2rem;
+  }
+  .btn::after {
+    display: none;
+  }
+  section {
+    padding: 3rem 0;
+  }
+}
 /* MAIN.CONTACT-PAGE SECTIONS */
 .contact-page section.hero {
   position: relative;
@@ -250,6 +265,7 @@ form fieldset label .icon.top {
 .contact-page section.information .container .boxes {
   display: flex;
   gap: 2rem;
+  justify-content: center;
 }
 .contact-page section.information .container .boxes .box {
   padding: 1.5rem 3rem;
@@ -276,6 +292,7 @@ form fieldset label .icon.top {
 }
 .contact-page section.information .container .boxes .box .text p {
   margin-bottom: 0;
+  text-wrap: nowrap;
 }
 
 .contact-page section.form {
@@ -309,22 +326,98 @@ form fieldset label .icon.top {
 }
 
 .contact-page section.map .container {
+  height: 640px;
   margin: 0;
   padding: 0;
   max-width: none;
   background-color: #0e1021;
-  position: relative;
   display: flex;
   align-items: start;
   justify-content: center;
 }
-.contact-page section.map .container iframe {
+.contact-page section.map .container .map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.contact-page section.map .container .map-wrapper iframe {
   width: 100%;
 }
-.contact-page section.map .container small a {
+.contact-page section.map .container .map-wrapper small a {
   position: absolute;
   padding: 0 0.1rem;
-  bottom: 0.5rem;
-  left: 0.1rem;
+  /*bottom: .5rem;
+  left: .1rem;*/
+  bottom: 0;
+  left: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+@media (max-width: 1520px) {
+  /* SECTION INFORMATION 1520 */
+  .contact-page section.information .container .boxes {
+    /*flex-direction: column;
+    align-items: center;*/
+    flex-wrap: wrap;
+  }
+  .contact-page section.information .container .boxes .box {
+    flex: none;
+    width: 33dvw;
+  }
+  /* SECTION FORM 1520 */
+  .contact-page section.form .container #contact-form fieldset legend {
+    width: 50%;
+  }
+}
+@media (max-width: 992px) {
+  /* SECTION INFORMATION 992 */
+  .contact-page section.information .container .boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-page section.information .container .boxes .box {
+    width: 50dvw;
+  }
+  /* SECTION FORM 992 */
+  .contact-page section.form .container #contact-form fieldset legend {
+    width: 75%;
+  }
+  /* SECTION MAP 992 */
+  .contact-page section.map .container {
+    background-color: #ffffff;
+    padding: 0 3rem;
+  }
+  .contact-page section.map .container, .contact-page section.map .map-wrapper, .contact-page section.map iframe {
+    height: 420px;
+  }
+}
+@media (max-width: 768px) {
+  /* SECTION INFORMATION 768 */
+  .contact-page section.information .container .boxes .box {
+    width: 100%;
+  }
+  /* SECTION FORM 768 */
+  .contact-page section.form .container #contact-form {
+    padding: 3rem 0;
+  }
+  .contact-page section.form .container #contact-form fieldset legend {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  /* SECTION FORM 768 */
+  .contact-page section.form {
+    padding-bottom: 3rem;
+  }
+  /* SECTION MAP 576 */
+  .contact-page section.map .container, .contact-page section.map .map-wrapper, .contact-page section.map iframe {
+    height: 360px;
+  }
+  .contact-page section.map .container .map-wrapper small a {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+}/*# sourceMappingURL=contact.css.map */

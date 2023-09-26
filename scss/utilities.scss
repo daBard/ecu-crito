@@ -59,13 +59,6 @@ section {
     padding: 0;
 }
 
-@media (max-width: 1520px) {
-    /* GLOBAL */
-    .container {
-        padding: 0 3rem;
-    }
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $headings-font;
     color: $color-prim;
@@ -285,5 +278,31 @@ form {
                 }
             }
         }        
+    }
+}
+
+@media (max-width: 1520px) {
+    /* GLOBAL */
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+@media (max-width: 576px) { 
+    /* GLOBAL 576*/
+    :root {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    section {
+        padding: 3rem 0;
     }
 }

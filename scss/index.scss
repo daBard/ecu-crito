@@ -859,23 +859,6 @@
 }
 
 @media (max-width: 576px) { 
-    /* GLOBAL 576*/
-    :root {
-        font-size: 14px;
-    }
-    
-    .btn {
-        padding: 1rem 2rem;
-
-        &::after {
-            display: none;
-        }
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
     /* SECTION FEATURES 576 */
     .start-page section.features .container {
      .box {

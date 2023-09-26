@@ -29,6 +29,7 @@
         .boxes {
             display: flex;
             gap: 2rem;
+            justify-content: center;
             
             .box {
                 padding: 1.5rem 3rem;
@@ -37,7 +38,7 @@
                 display: flex;
                 gap: 1rem;
                 align-items: start;
-
+                
                 .icon {
                     height: 3rem;
                     width: 3rem;
@@ -58,6 +59,7 @@
 
                     p {
                         margin-bottom: 0;
+                        text-wrap: nowrap;
                     }
                 }
 
@@ -103,26 +105,141 @@
 
 .contact-page section.map {
     .container {
+        height: 640px;
         margin: 0;
         padding: 0;
         max-width: none;
         background-color: $bg-footer;
-        position: relative;
         display: flex;
         align-items: start;
         justify-content: center;
 
-        iframe {
+        .map-wrapper {
+            position: relative;
             width: 100%;
-        }
+            height: 100%;
+    
+            iframe {
+                width: 100%;
+            }
 
-        small a {
-            position: absolute;
-            padding: 0 .1rem;
-            bottom: .5rem;
-            left: .1rem;
-            background-color: rgb(255, 255, 255, 0.5);
+            small a {
+                position: absolute;
+                padding: 0 .1rem;
+                /*bottom: .5rem;
+                left: .1rem;*/
+                bottom: 0;
+                left: 0;
+                background-color: rgb(255, 255, 255, 0.5);
+            }
         }
     }
 
+}
+
+@media (max-width: 1520px) {
+    /* SECTION INFORMATION 1520 */
+    .contact-page section.information .container {
+        .boxes {
+            /*flex-direction: column;
+            align-items: center;*/
+            flex-wrap: wrap;
+
+            .box {
+                flex: none;
+                width: 33dvw;
+            }
+        }
+    
+    }
+
+    /* SECTION FORM 1520 */
+    .contact-page section.form .container {
+        #contact-form fieldset {
+            legend {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) { 
+    /* SECTION INFORMATION 992 */
+    .contact-page section.information .container {
+        .boxes {
+            flex-direction: column;
+            align-items: center;
+
+            .box {
+                width: 50dvw;
+            }
+        }
+    }
+
+     /* SECTION FORM 992 */
+     .contact-page section.form .container {
+        #contact-form fieldset {
+            legend {
+                width: 75%;
+            }
+        }
+    }
+
+    /* SECTION MAP 992 */
+    .contact-page section.map {
+        .container {
+            background-color: $bg-white;
+            padding: 0 3rem;
+        }
+
+        .container, .map-wrapper, iframe {
+            height: 420px;
+        }
+    }
+    
+    
+}
+
+@media (max-width: 768px) { 
+    /* SECTION INFORMATION 768 */
+    .contact-page section.information .container { 
+        .boxes {
+            .box {
+                width: 100%;
+            }
+        }
+    }
+
+    /* SECTION FORM 768 */
+    .contact-page section.form .container {
+        #contact-form {
+            padding: 3rem 0;
+            fieldset legend {
+                text-align: center;
+                width: 100%;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 576px) { 
+    /* SECTION FORM 768 */
+    .contact-page section.form { 
+        padding-bottom: 3rem;
+    }
+    
+    /* SECTION MAP 576 */
+    .contact-page section.map {
+        .container, .map-wrapper, iframe {
+            height: 360px;
+        }
+
+        .container .map-wrapper small a {
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: auto;
+        }
+    }
 }
