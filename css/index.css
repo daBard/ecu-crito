@@ -176,6 +176,7 @@ form fieldset label input, form fieldset label textarea {
   border-radius: 25px;
   padding: 1rem 2rem;
   border: 1px solid transparent;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 form fieldset label input:hover, form fieldset label input:focus, form fieldset label textarea:hover, form fieldset label textarea:focus {
   border: 1px solid #191919;
@@ -225,6 +226,21 @@ form fieldset label .icon.top {
   /* GLOBAL */
   .container {
     padding: 0 3rem;
+  }
+}
+@media (max-width: 576px) {
+  /* GLOBAL 576*/
+  :root {
+    font-size: 14px;
+  }
+  .btn {
+    padding: 1rem 2rem;
+  }
+  .btn::after {
+    display: none;
+  }
+  section {
+    padding: 3rem 0;
   }
 }
 /* MAIN.START-PAGE SECTIONS */

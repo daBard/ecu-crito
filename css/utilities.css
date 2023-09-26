@@ -176,6 +176,7 @@ form fieldset label input, form fieldset label textarea {
   border-radius: 25px;
   padding: 1rem 2rem;
   border: 1px solid transparent;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 form fieldset label input:hover, form fieldset label input:focus, form fieldset label textarea:hover, form fieldset label textarea:focus {
   border: 1px solid #191919;
