@@ -119,6 +119,7 @@
     
             iframe {
                 width: 100%;
+                height: 640px;
             }
 
             small a {
@@ -222,6 +223,15 @@
 }
 
 @media (max-width: 576px) { 
+    /* SECTION INFORMATION 576 */
+    .contact-page section.information .container { 
+        .boxes .box {
+            .icon i {
+                scale: 1;
+            }
+        }
+    }
+
     /* SECTION FORM 768 */
     .contact-page section.form {
         padding-bottom: 3rem;

@@ -4,11 +4,31 @@
 .start-page section.hero {
     position: relative;
 
+    img.bg-lines {
+        max-width: 50dvw;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
     .container {
+        
 
         .left {
             gap: 3rem;
             flex: 1;
+
+            .content {
+                z-index: 99;
+            }
+
+            .btngroup {
+                display: flex;
+                gap: 1rem;
+
+                
+            }
         }
 
         .right {
@@ -20,21 +40,7 @@
                 right: -50px;
             }
         }
-        
-        .btngroup {
-            display: flex;
-            gap: 1rem;
-        }
     }
-     
-    img.bg-lines {
-        max-width: 50dvw;
-        padding: 0;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-
 }
 
 .start-page section.logo-bar {

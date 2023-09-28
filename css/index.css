@@ -275,9 +275,23 @@ form fieldset label .icon.top {
 .start-page section.hero {
   position: relative;
 }
+.start-page section.hero img.bg-lines {
+  max-width: 50dvw;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 .start-page section.hero .container .left {
   gap: 3rem;
   flex: 1;
+}
+.start-page section.hero .container .left .content {
+  z-index: 99;
+}
+.start-page section.hero .container .left .btngroup {
+  display: flex;
+  gap: 1rem;
 }
 .start-page section.hero .container .right {
   flex: 1;
@@ -287,17 +301,6 @@ form fieldset label .icon.top {
   position: relative;
   bottom: 0;
   right: -50px;
-}
-.start-page section.hero .container .btngroup {
-  display: flex;
-  gap: 1rem;
-}
-.start-page section.hero img.bg-lines {
-  max-width: 50dvw;
-  padding: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 .start-page section.logo-bar {
