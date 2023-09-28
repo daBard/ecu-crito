@@ -44,7 +44,7 @@
         justify-content: space-evenly;
         
         a {
-            transition: scale .3s ease-in-out;
+            @include default-transition();
             &:hover, &:focus {
                 scale: 1.2;
             }
@@ -155,7 +155,7 @@
     }
 }
 
-.start-page section.service-fun {
+.start-page section.service {
     position: relative;
 
     h2 {
@@ -170,7 +170,6 @@
             border: none;
             padding: 3rem 2rem;
             justify-content: space-between;
-            transition: all .3s ease-in-out;
 
             .line {
                 height: 1px;
@@ -187,9 +186,18 @@
                     color: $bg-white;
                 }
             }
+
+            &, & > * {
+                @include default-transition();
+            }
             
             &:hover, &:focus {
                 background-color: $btn-color;
+
+                h3 {
+                    text-decoration: underline;
+                }
+
                 i {
                     background-color: $bg-white;
                     color: $color-prim;
@@ -255,11 +263,23 @@
                     border-radius: 50%;
                 }
 
+                &, & .icon {
+                    @include default-transition(.8s);
+                }
+
                 &:hover, &:focus {
                     .icon {
                         border-color: transparent;
                         background-color: $color-prim;
                         color: $bg-white;
+                        i {
+                            animation-name: spin-pop;
+                            animation-duration: 1s;
+                            animation-iteration-count: 1;
+                            animation-direction: normal;
+                            animation-timing-function: ease-out;
+                            animation-fill-mode: forwards;
+                        }
                     }
                 }
 
@@ -314,7 +334,7 @@
             width: 100%;
 
             *, > * {
-                transition: all .4s;
+                @include default-transition(.4s)
             }
 
             img {
@@ -474,31 +494,7 @@
         padding: 3rem 0;
         gap: 2rem;
         
-        a {
-            
-            &, * {
-                transition: all .3s ease-in-out;
-            }
-
-            .line {
-                margin: 0 auto;
-                width: 0%;
-                height: 3px;
-                background-color: $btn-color;
-                
-                
-            }
-
-            &:hover, &:focus {
-                scale: 1.05;
-
-                .line {
-                    width: 100%;
-                }
-            }
-        }
-
-        .card {
+        a.card {
             flex: 1;
             border: none;
 
@@ -541,6 +537,27 @@
             .text {
                 margin-top: 2rem;
             }  
+
+            .line {
+                margin: 0 auto;
+                width: 0%;
+                height: 3px;
+                background-color: $btn-color;
+            }
+
+            &, & > * {
+                @include default-transition()
+            }
+
+            &:hover, &:focus {
+                .text h3 {
+                    text-decoration: underline;
+                }
+
+                .line {
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -614,7 +631,7 @@
     }
 
     /* SECTION SERVICE 1520 */
-    .start-page section.service-fun {
+    .start-page section.service {
         h2 {
             max-width: 100%;
         }
@@ -780,7 +797,7 @@
 
         .cards {
             padding: 3rem 0;
-            gap: 3rem;
+            gap: 1.5rem;
             flex-direction: column;
 
             .card {
@@ -795,7 +812,16 @@
                 .quote {
                     text-align: center;
                 }
+
+                &:not(:last-of-type)::after {
+                    content: "";
+                    width: 50%;
+                    height: 1px;
+                    background-color: $line-color;
+                    margin-top: 1.5rem;
+                }
             }
+
         }
     }
 }
@@ -816,7 +842,7 @@
     }
     
     /* SECTION SERVICE 768 */
-    .start-page section.service-fun {
+    .start-page section.service {
     
         .cards {
             .card {
@@ -858,7 +884,12 @@
     }
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
+    /* GLOBAL 576 */
+    .container {
+        padding: 0 1.5rem;
+    }
+    
     /* SECTION FEATURES 576 */
     .start-page section.features .container {
      .box {
@@ -877,7 +908,7 @@
        padding: 0;
 
         .row .right {
-            padding: 0 2rem;
+            padding: 0 2rem; 
         }
     }
 
@@ -887,6 +918,10 @@
         .cards {
             .card {
                 flex-basis: 100%;
+                img {
+                    height: 345px;
+                    object-position: auto 20%;
+                }
             }
         }
     }

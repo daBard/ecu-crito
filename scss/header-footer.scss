@@ -73,7 +73,7 @@ header {
                         margin: .5rem auto;
                         content: "";
                         border-bottom: 1px solid $color-prim;
-                        transition: width .3s ease-in-out;
+                        @include default-transition()
                     }
 
                     &:hover, &:focus, &.active {
@@ -148,7 +148,7 @@ footer {
                 }
 
                 &, &::after {
-                    transition: all .3s ease-in-out;
+                    @include default-transition()
                 }
 
                 &:hover, &:focus, &.active {
@@ -237,7 +237,8 @@ footer {
 
                     img {
                         flex: 1;
-                        width: 100%;                    }
+                        width: 100%;                    
+                    }
 
                     .text {
                         flex: 5;
@@ -254,6 +255,18 @@ footer {
 @media (max-width: 992px) { 
     /* HEADER 992 */
     header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        box-shadow: 0 4px 2px -2px $line-color;
+
+        .navbar {
+            a.navbar-brand {
+                margin: 0;
+            }
+        }
+        
         #navbarNav {
 
             .nav {
@@ -298,7 +311,7 @@ footer {
         }
 }
 
-    /* FOOTER 990 */
+    /* FOOTER 992 */
     footer {
         section.top {
             padding-top: 3rem;
@@ -327,9 +340,9 @@ footer {
                 grid-template-areas: 
                 'navi'
                 'login'
+                'line'
                 'contact'
-                'social'
-                'line';
+                'social';
                 row-gap: 0rem;
                 column-gap: 0rem;
             
@@ -347,6 +360,9 @@ footer {
                                 padding: 0;
                                 flex: 1;
 
+                                span.tel, span.address {
+                                    text-wrap: nowrap;
+                                }
                             }
 
                             & i {
@@ -388,12 +404,13 @@ footer {
 
                 .login {
                     justify-content: center;
+                    align-items: center;
                     border-top: none;
-                    margin-bottom: 2rem;
+                    margin: 1rem 0 2rem 0;
                 }
 
                 .line {
-                    margin-top: 2rem;
+                    margin-bottom: 2rem;
                 }
             }
         }
@@ -421,19 +438,20 @@ footer {
 @media (max-width: 576px) { 
     /* GLOBAL */
     .container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
     
     /*HEADER 576 */
     header {
+        /* position:fixed; */
         #navbarNav {
             .nav {
                 grid-template-areas: 
                 'navi'
                 'login'
+                'line'
                 'contact'
-                'social'
-                'line';
+                'social';
                 row-gap: 0rem;
                 column-gap: 0rem;
             
@@ -500,16 +518,6 @@ footer {
                         }
                     
                     }   
-                }
-
-                .login {
-                    justify-content: center;
-                    border-top: none;
-                    margin-bottom: 2rem;
-                }
-
-                .line {
-                    margin-top: 2rem;
                 }
             }
         }

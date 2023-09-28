@@ -17,6 +17,12 @@ $line-color: #dad9d3;
 $font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
+/* MIXINS */
+@mixin default-transition($time: .3s) {
+    transition: all $time ease-in-out;
+}
+
+
 /* GLOBAL */
 :root {
     font-size: 16px;
@@ -93,10 +99,9 @@ a {
     text-transform: capitalize;
 
     &.btn-w, &.btn-c, &.btn-b {
-        transition: all .3s ease-in-out;
+        @include default-transition();
     }
     
-
     &.btn-w {
         background-color: $bg-white;
         border-color: $color-prim;
@@ -159,7 +164,7 @@ a {
             padding: 1rem;
             border: 1px solid $color-prim;
             border-radius: 50%;
-            transition: all .3s ease-in-out;
+            @include default-transition();
         }
     
     &:hover, &:focus {
@@ -196,7 +201,7 @@ a {
     gap: 2rem;
 
     a i {
-        transition: all .3s ease-in-out;
+        @include default-transition();
 
         &:hover {
             scale: 1.2;
@@ -282,10 +287,34 @@ form {
     }
 }
 
+/* ANIMATIONS */
+/* Spin-pop */
+@keyframes spin-pop {
+    50% {
+        scale: .2;
+    }
+    75% {
+        scale: 1.2;
+        transform: rotate(360deg);
+    }
+    100% {
+        scale: 1.1;
+        transform: rotate(360deg);
+    }
+  }
+
+
 @media (max-width: 1520px) {
     /* GLOBAL */
     .container {
         padding: 0 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    /* GLOBAL */
+    section:first-of-type {
+        padding-top: 3rem;
     }
 }
 
@@ -294,7 +323,7 @@ form {
     :root {
         font-size: 14px;
     }
-    
+
     .btn {
         padding: 1rem 2rem;
 
@@ -305,5 +334,13 @@ form {
 
     section {
         padding: 3rem 0;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    main i {
+        scale: .6;
     }
 }

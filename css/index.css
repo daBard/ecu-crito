@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
 /* VARIABLES */
+/* MIXINS */
 /* GLOBAL */
 :root {
   font-size: 16px;
@@ -222,10 +223,31 @@ form fieldset label .icon.top {
   align-items: start;
 }
 
+/* ANIMATIONS */
+/* Spin-pop */
+@keyframes spin-pop {
+  50% {
+    scale: 0.2;
+  }
+  75% {
+    scale: 1.2;
+    transform: rotate(360deg);
+  }
+  100% {
+    scale: 1.1;
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 1520px) {
   /* GLOBAL */
   .container {
     padding: 0 3rem;
+  }
+}
+@media (max-width: 992px) {
+  /* GLOBAL */
+  section:first-of-type {
+    padding-top: 3rem;
   }
 }
 @media (max-width: 576px) {
@@ -241,6 +263,12 @@ form fieldset label .icon.top {
   }
   section {
     padding: 3rem 0;
+  }
+  .row {
+    margin: 0;
+  }
+  main i {
+    scale: 0.6;
   }
 }
 /* MAIN.START-PAGE SECTIONS */
@@ -279,7 +307,7 @@ form fieldset label .icon.top {
   justify-content: space-evenly;
 }
 .start-page section.logo-bar .logos a {
-  transition: scale 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .start-page section.logo-bar .logos a:hover, .start-page section.logo-bar .logos a:focus {
   scale: 1.2;
@@ -357,47 +385,52 @@ form fieldset label .icon.top {
   gap: 3rem;
 }
 
-.start-page section.service-fun {
+.start-page section.service {
   position: relative;
 }
-.start-page section.service-fun h2 {
+.start-page section.service h2 {
   max-width: 50%;
 }
-.start-page section.service-fun .cards {
+.start-page section.service .cards {
   gap: 2rem;
   padding: 3rem 0;
 }
-.start-page section.service-fun .cards .card {
+.start-page section.service .cards .card {
   border: none;
   padding: 3rem 2rem;
   justify-content: space-between;
-  transition: all 0.3s ease-in-out;
 }
-.start-page section.service-fun .cards .card .line {
+.start-page section.service .cards .card .line {
   height: 1px;
   width: 20%;
   background-color: #191919;
   margin-bottom: 2rem;
 }
-.start-page section.service-fun .cards .card .btn-round {
+.start-page section.service .cards .card .btn-round {
   display: flex;
   justify-content: end;
 }
-.start-page section.service-fun .cards .card .btn-round i {
+.start-page section.service .cards .card .btn-round i {
   background-color: #191919;
   color: #ffffff;
 }
-.start-page section.service-fun .cards .card:hover, .start-page section.service-fun .cards .card:focus {
+.start-page section.service .cards .card, .start-page section.service .cards .card > * {
+  transition: all 0.3s ease-in-out;
+}
+.start-page section.service .cards .card:hover, .start-page section.service .cards .card:focus {
   background-color: #f9d783;
 }
-.start-page section.service-fun .cards .card:hover i, .start-page section.service-fun .cards .card:focus i {
+.start-page section.service .cards .card:hover h3, .start-page section.service .cards .card:focus h3 {
+  text-decoration: underline;
+}
+.start-page section.service .cards .card:hover i, .start-page section.service .cards .card:focus i {
   background-color: #ffffff;
   color: #191919;
 }
-.start-page section.service-fun .btngroup .btn {
+.start-page section.service .btngroup .btn {
   width: fit-content;
 }
-.start-page section.service-fun .lines {
+.start-page section.service .lines {
   max-width: 50dvw;
   position: absolute;
   bottom: 0;
@@ -443,10 +476,21 @@ form fieldset label .icon.top {
   border: 1px solid #dad9d3;
   border-radius: 50%;
 }
+.start-page section.why-us .left .objects a.object, .start-page section.why-us .left .objects a.object .icon {
+  transition: all 0.8s ease-in-out;
+}
 .start-page section.why-us .left .objects a.object:hover .icon, .start-page section.why-us .left .objects a.object:focus .icon {
   border-color: transparent;
   background-color: #191919;
   color: #ffffff;
+}
+.start-page section.why-us .left .objects a.object:hover .icon i, .start-page section.why-us .left .objects a.object:focus .icon i {
+  animation-name: spin-pop;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 .start-page section.why-us .left .objects a.object .text {
   display: flex;
@@ -490,7 +534,7 @@ form fieldset label .icon.top {
   width: 100%;
 }
 .start-page section.project-case .grid a.object *, .start-page section.project-case .grid a.object > * {
-  transition: all 0.4s;
+  transition: all 0.4s ease-in-out;
 }
 .start-page section.project-case .grid a.object img {
   width: 100%;
@@ -612,34 +656,19 @@ form fieldset label .icon.top {
   padding: 3rem 0;
   gap: 2rem;
 }
-.start-page section.articles-news .cards a, .start-page section.articles-news .cards a * {
-  transition: all 0.3s ease-in-out;
-}
-.start-page section.articles-news .cards a .line {
-  margin: 0 auto;
-  width: 0%;
-  height: 3px;
-  background-color: #f9d783;
-}
-.start-page section.articles-news .cards a:hover, .start-page section.articles-news .cards a:focus {
-  scale: 1.05;
-}
-.start-page section.articles-news .cards a:hover .line, .start-page section.articles-news .cards a:focus .line {
-  width: 100%;
-}
-.start-page section.articles-news .cards .card {
+.start-page section.articles-news .cards a.card {
   flex: 1;
   border: none;
 }
-.start-page section.articles-news .cards .card .image-wrapper {
+.start-page section.articles-news .cards a.card .image-wrapper {
   position: relative;
 }
-.start-page section.articles-news .cards .card .image-wrapper img {
+.start-page section.articles-news .cards a.card .image-wrapper img {
   width: 100%;
   max-height: 280px;
   object-fit: fill;
 }
-.start-page section.articles-news .cards .card .image-wrapper .date-box {
+.start-page section.articles-news .cards a.card .image-wrapper .date-box {
   height: 5rem;
   width: 5rem;
   background-color: #f9d783;
@@ -651,17 +680,32 @@ form fieldset label .icon.top {
   justify-content: center;
   align-items: center;
 }
-.start-page section.articles-news .cards .card .image-wrapper .date-box p.date, .start-page section.articles-news .cards .card .image-wrapper .date-box p.month {
+.start-page section.articles-news .cards a.card .image-wrapper .date-box p.date, .start-page section.articles-news .cards a.card .image-wrapper .date-box p.month {
   margin: 0;
   padding: 0;
   line-height: 1.05;
 }
-.start-page section.articles-news .cards .card .image-wrapper .date-box .date {
+.start-page section.articles-news .cards a.card .image-wrapper .date-box .date {
   font-size: 1.75rem;
   font-weight: 700;
 }
-.start-page section.articles-news .cards .card .text {
+.start-page section.articles-news .cards a.card .text {
   margin-top: 2rem;
+}
+.start-page section.articles-news .cards a.card .line {
+  margin: 0 auto;
+  width: 0%;
+  height: 3px;
+  background-color: #f9d783;
+}
+.start-page section.articles-news .cards a.card, .start-page section.articles-news .cards a.card > * {
+  transition: all 0.3s ease-in-out;
+}
+.start-page section.articles-news .cards a.card:hover .text h3, .start-page section.articles-news .cards a.card:focus .text h3 {
+  text-decoration: underline;
+}
+.start-page section.articles-news .cards a.card:hover .line, .start-page section.articles-news .cards a.card:focus .line {
+  width: 100%;
 }
 
 .start-page section.newsletter {
@@ -719,13 +763,13 @@ form fieldset label .icon.top {
     padding-bottom: 3rem;
   }
   /* SECTION SERVICE 1520 */
-  .start-page section.service-fun h2 {
+  .start-page section.service h2 {
     max-width: 100%;
   }
-  .start-page section.service-fun .cards {
+  .start-page section.service .cards {
     flex-wrap: wrap;
   }
-  .start-page section.service-fun .cards .card {
+  .start-page section.service .cards .card {
     width: calc(50% - 1.5rem);
   }
   /* SECTION TESTIMONIALS 1520 */
@@ -838,7 +882,7 @@ form fieldset label .icon.top {
   }
   .start-page section.testimonials .container .cards {
     padding: 3rem 0;
-    gap: 3rem;
+    gap: 1.5rem;
     flex-direction: column;
   }
   .start-page section.testimonials .container .cards .card {
@@ -851,6 +895,13 @@ form fieldset label .icon.top {
   }
   .start-page section.testimonials .container .cards .card .quote {
     text-align: center;
+  }
+  .start-page section.testimonials .container .cards .card:not(:last-of-type)::after {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background-color: #dad9d3;
+    margin-top: 1.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -865,7 +916,7 @@ form fieldset label .icon.top {
     gap: 2rem;
   }
   /* SECTION SERVICE 768 */
-  .start-page section.service-fun .cards .card {
+  .start-page section.service .cards .card {
     width: 100%;
   }
   /* SECTION ARTICLES-NEWS 768 */
@@ -890,6 +941,10 @@ form fieldset label .icon.top {
   }
 }
 @media (max-width: 576px) {
+  /* GLOBAL 576 */
+  .container {
+    padding: 0 1.5rem;
+  }
   /* SECTION FEATURES 576 */
   .start-page section.features .container .box {
     padding: 3rem;
@@ -909,6 +964,10 @@ form fieldset label .icon.top {
   /* SECTION TEAM 576 */
   .start-page section.team .container .cards .card {
     flex-basis: 100%;
+  }
+  .start-page section.team .container .cards .card img {
+    height: 345px;
+    object-position: auto 20%;
   }
   /* SECTION TESTIMONIALS 576 */
   .start-page section.testimonials .container {
@@ -936,4 +995,4 @@ form fieldset label .icon.top {
   .start-page section.newsletter .container form fieldset .group label .icon {
     z-index: 10;
   }
-}/*# sourceMappingURL=index.css.map */
+}
