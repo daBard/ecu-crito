@@ -739,6 +739,13 @@ form fieldset label .icon.top {
   gap: 1rem;
   flex: 5;
 }
+.start-page section.newsletter .container form fieldset .group label {
+  flex-grow: 1;
+  max-width: 20rem;
+}
+.start-page section.newsletter .container form fieldset .group label #email {
+  width: 100%;
+}
 .start-page section.newsletter img {
   position: absolute;
   right: 0;
@@ -813,6 +820,11 @@ form fieldset label .icon.top {
     flex-direction: column;
     gap: 1.5rem;
     align-items: start;
+  }
+  .start-page section.newsletter .container form fieldset .group {
+    justify-content: start;
+    flex: auto;
+    width: 100%;
   }
 }
 @media (max-width: 992px) {
@@ -938,6 +950,7 @@ form fieldset label .icon.top {
   }
   .start-page section.newsletter .container form fieldset .group label, .start-page section.newsletter .container form fieldset .group input, .start-page section.newsletter .container form fieldset .group button {
     width: 100%;
+    max-width: 100%;
   }
   .start-page section.newsletter img {
     bottom: 33%;

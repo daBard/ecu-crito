@@ -598,6 +598,16 @@
                 align-items: center;
                 gap: 1rem;
                 flex: 5;
+
+                label {
+                    flex-grow: 1;
+                    max-width: 20rem;
+                    
+                    #email {
+                        width: 100%;    
+                    }
+                }
+                
             }
         }
     }
@@ -700,6 +710,12 @@
             flex-direction: column;
             gap: 1.5rem;
             align-items: start;
+
+            .group {
+                justify-content: start;
+                flex: auto;
+                width: 100%;
+            }
         }
     }
 }
@@ -880,6 +896,7 @@
 
                     label, input, button {
                         width: 100%;
+                        max-width: 100%;
                     }
                 }
             }
