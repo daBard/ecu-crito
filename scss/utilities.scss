@@ -200,11 +200,29 @@ a {
 .social {
     gap: 2rem;
 
-    a i {
-        @include default-transition();
+    a {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        
+        /* border: 1px dashed transparent;
+        border-radius: 50%; */
 
-        &:hover {
-            scale: 1.2;
+        &, & i {
+            @include default-transition();
+            line-height: 0;
+            vertical-align: 0;
+        }
+
+        & i:hover, & i:focus {
+            /* animation: spin-clock 1s linear infinite;
+            border-color: $color-prim; 
+
+            i { animation: spin-counter-clock 1s linear infinite; } */
+
+            animation: popping .6s linear infinite;
         }
     }
 }
@@ -299,10 +317,27 @@ form {
     }
     100% {
         scale: 1.1;
-        transform: rotate(360deg);
+            transform: rotate(360deg);
     }
-  }
+}
 
+/* Spin-clock UNUSED
+@keyframes spin-clock {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Spin-counter-clock UNUSED
+@keyframes spin-counter-clock {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+} */
+
+/* Popping */
+@keyframes popping {
+    50% { scale: 1.2; }
+    100% { scale: 1; }
+}
 
 @media (max-width: 1520px) {
     /* GLOBAL */

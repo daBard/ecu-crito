@@ -82,14 +82,8 @@ header {
                             width: 2rem;
                         }
                     }
-                    
-                    
-
-                }
-                
+                }   
             }
-
-            
         }
 
         .login {
@@ -202,6 +196,10 @@ footer {
 
         .social a {
             color: $bg-white;
+    
+            /* &:hover {
+                border-color: $bg-white;
+            } */
         }
     }
     
@@ -242,7 +240,7 @@ footer {
 
                     .text {
                         flex: 5;
-                        margin: 0;
+                        margin: 0; 
                     }
 
                 }
