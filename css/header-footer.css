@@ -267,6 +267,9 @@ form fieldset label .icon.top {
   .row {
     margin: 0;
   }
+  main i {
+    scale: 0.6;
+  }
 }
 /* HEADER */
 header .navbar-brand {
@@ -640,4 +643,4 @@ footer section.bottom .social a {
     flex-direction: column-reverse;
     gap: 3rem;
   }
-}
+}/*# sourceMappingURL=header-footer.css.map */

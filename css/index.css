@@ -416,6 +416,7 @@ form fieldset label .icon.top {
 .start-page section.service .cards .card .btn-round i {
   background-color: #191919;
   color: #ffffff;
+  border: none;
 }
 .start-page section.service .cards .card, .start-page section.service .cards .card > * {
   transition: all 0.3s ease-in-out;
@@ -429,6 +430,20 @@ form fieldset label .icon.top {
 .start-page section.service .cards .card:hover i, .start-page section.service .cards .card:focus i {
   background-color: #ffffff;
   color: #191919;
+}
+.start-page section.service .cards .card.flipped {
+  background-color: #f9d783;
+}
+.start-page section.service .cards .card.flipped .btn-round i {
+  background-color: #ffffff;
+  color: #191919;
+}
+.start-page section.service .cards .card.flipped:hover, .start-page section.service .cards .card.flipped:focus {
+  background-color: #ffffff;
+}
+.start-page section.service .cards .card.flipped:hover i, .start-page section.service .cards .card.flipped:focus i {
+  background-color: #191919;
+  color: #ffffff;
 }
 .start-page section.service .btngroup .btn {
   width: fit-content;
@@ -1011,4 +1026,4 @@ form fieldset label .icon.top {
   .start-page section.newsletter .container form fieldset .group label .icon {
     z-index: 10;
   }
-}
+}/*# sourceMappingURL=index.css.map */

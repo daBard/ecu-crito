@@ -190,6 +190,7 @@
                 i {
                     background-color: $color-prim;
                     color: $bg-white;
+                    border: none;
                 }
             }
 
@@ -207,6 +208,24 @@
                 i {
                     background-color: $bg-white;
                     color: $color-prim;
+                }
+            }
+
+            &.flipped {
+                background-color: $btn-color;
+
+                .btn-round i {
+                    background-color: $bg-white;
+                    color: $color-prim;
+                }
+
+                &:hover, &:focus {
+                    background-color: $bg-white;
+
+                i {
+                    background-color: $color-prim;
+                    color: $bg-white;
+                }
                 }
             }
         }  
