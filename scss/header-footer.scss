@@ -35,6 +35,10 @@ header {
 
                 align-items: center;
                 
+                span.tel, span.address {
+                    text-wrap: nowrap;
+                }
+
                 i {
                     padding-right: var(--bs-navbar-nav-link-padding-x);
                 }
@@ -357,10 +361,6 @@ footer {
                                 border: none;
                                 padding: 0;
                                 flex: 1;
-
-                                span.tel, span.address {
-                                    text-wrap: nowrap;
-                                }
                             }
 
                             & i {

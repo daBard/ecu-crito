@@ -13,7 +13,20 @@ $color-highlight:red;
 
 $btn-color: #f9d783;
 $line-color: #dad9d3;
+
+@media (prefers-color-scheme: dark) {
+    $bg-color: #191919;
+    $bg-white: #000000;
+    $bg-footer:#0e1021;
     
+    $color-prim: #f0efe9;
+    $color-sec: #84848a;
+    $color-highlight:red;
+    
+    $btn-color: #f9d783;
+    $line-color: #dad9d3;
+}
+
 $font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 

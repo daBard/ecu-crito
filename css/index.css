@@ -159,19 +159,20 @@ a {
   gap: 2rem;
 }
 .social a {
-  /* height: 2.5rem;
+  height: 2.5rem;
   width: 2.5rem;
-  border: 1px dashed transparent;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  /* border: 1px dashed transparent;
+  border-radius: 50%; */
 }
 .social a, .social a i {
   transition: all 0.3s ease-in-out;
   line-height: 0;
+  vertical-align: 0;
 }
-.social a:hover, .social a:focus {
+.social a i:hover, .social a i:focus {
   /* animation: spin-clock 1s linear infinite;
   border-color: $color-prim; 
 
@@ -264,7 +265,7 @@ form fieldset label .icon.top {
     100% { transform: rotate(0deg); }
 } */
 /* Popping */
-@keyframes spin-counter-clock {
+@keyframes popping {
   50% {
     scale: 1.2;
   }
@@ -342,12 +343,21 @@ form fieldset label .icon.top {
 }
 .start-page section.logo-bar .logos {
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .start-page section.logo-bar .logos a {
+  background-color: transparent;
   transition: all 0.3s ease-in-out;
+}
+.start-page section.logo-bar .logos a img {
+  mix-blend-mode: multiply;
 }
 .start-page section.logo-bar .logos a:hover, .start-page section.logo-bar .logos a:focus {
   scale: 1.2;
+  background-color: transparent;
+}
+.start-page section.logo-bar .logos a:hover img, .start-page section.logo-bar .logos a:focus img {
+  mix-blend-mode: multiply;
 }
 
 .start-page section.features {
@@ -572,7 +582,7 @@ form fieldset label .icon.top {
 .start-page section.project-case {
   background-color: #ffffff;
 }
-.start-page section.project-case .grid {
+.start-page section.project-case .objects {
   width: 100%;
   margin: 5rem 0;
   display: grid;
@@ -580,53 +590,53 @@ form fieldset label .icon.top {
   grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
   grid-template-rows: calc(500px - 1.5rem) calc(500px - 1.5rem);
 }
-.start-page section.project-case .grid a.object {
+.start-page section.project-case .objects a.object {
   color: #191919 !important;
   height: 500px;
   width: 100%;
 }
-.start-page section.project-case .grid a.object *, .start-page section.project-case .grid a.object > * {
+.start-page section.project-case .objects a.object *, .start-page section.project-case .objects a.object > * {
   transition: all 0.4s ease-in-out;
 }
-.start-page section.project-case .grid a.object img {
+.start-page section.project-case .objects a.object img {
   width: 100%;
   height: 350px;
   object-fit: cover;
   display: block;
 }
-.start-page section.project-case .grid a.object h3 {
+.start-page section.project-case .objects a.object h3 {
   align-self: start;
   margin-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #dad9d3;
   text-transform: none;
 }
-.start-page section.project-case .grid a.object .text {
+.start-page section.project-case .objects a.object .text {
   width: 100%;
   height: 0px;
   display: block;
   overflow: hidden;
 }
-.start-page section.project-case .grid a.object .btngroup {
+.start-page section.project-case .objects a.object .btngroup {
   padding-top: 1rem;
   display: flex;
   justify-content: end;
 }
-.start-page section.project-case .grid a.object .btngroup .btn {
+.start-page section.project-case .objects a.object .btngroup .btn {
   border: none;
   padding: 0;
 }
-.start-page section.project-case .grid a.object:hover h3 {
+.start-page section.project-case .objects a.object:hover h3 {
   margin-top: 1rem;
 }
-.start-page section.project-case .grid a.object:hover img {
+.start-page section.project-case .objects a.object:hover img {
   height: 0px;
   display: block;
 }
-.start-page section.project-case .grid a.object:hover .text {
+.start-page section.project-case .objects a.object:hover .text {
   height: 350px;
 }
-.start-page section.project-case .grid a.object:hover .btngroup .btn:hover, .start-page section.project-case .grid a.object:hover .btngroup .btn:focus {
+.start-page section.project-case .objects a.object:hover .btngroup .btn:hover, .start-page section.project-case .objects a.object:hover .btngroup .btn:focus {
   background-color: transparent;
   color: #191919;
   border: none;
@@ -915,11 +925,20 @@ form fieldset label .icon.top {
   .start-page section.project-case .highlight, .start-page section.project-case h2 {
     align-self: start;
   }
-  .start-page section.project-case .grid {
+  .start-page section.project-case .objects {
     grid-template-columns: 100%;
     grid-template-rows: auto;
     gap: 1rem 0;
     margin: 1rem 0;
+  }
+  .start-page section.project-case .objects a.object:hover h3, .start-page section.project-case .objects a.object:hover .btngroup .btn {
+    text-decoration: underline;
+  }
+  .start-page section.project-case .objects a.object:hover img {
+    height: 350px;
+  }
+  .start-page section.project-case .objects a.object:hover .text {
+    height: 0px;
   }
   /* SECTION TEAM 992 */
   .start-page section.team .container .top {
@@ -969,6 +988,10 @@ form fieldset label .icon.top {
   }
 }
 @media (max-width: 768px) {
+  /* SECTION FEATURES 768 */
+  .start-page section.logo-bar .container .logos {
+    flex-wrap: nowrap;
+  }
   /* SECTION FEATURES 768 */
   .start-page section.features .container .box {
     flex-direction: column;

@@ -159,19 +159,20 @@ a {
   gap: 2rem;
 }
 .social a {
-  /* height: 2.5rem;
+  height: 2.5rem;
   width: 2.5rem;
-  border: 1px dashed transparent;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  /* border: 1px dashed transparent;
+  border-radius: 50%; */
 }
 .social a, .social a i {
   transition: all 0.3s ease-in-out;
   line-height: 0;
+  vertical-align: 0;
 }
-.social a:hover, .social a:focus {
+.social a i:hover, .social a i:focus {
   /* animation: spin-clock 1s linear infinite;
   border-color: $color-prim; 
 
@@ -264,7 +265,7 @@ form fieldset label .icon.top {
     100% { transform: rotate(0deg); }
 } */
 /* Popping */
-@keyframes spin-counter-clock {
+@keyframes popping {
   50% {
     scale: 1.2;
   }

@@ -331,6 +331,9 @@ header #navbarNav .contact div div {
   align-items: center;
   padding: 0 0.5rem;
 }
+header #navbarNav .contact div div span.tel, header #navbarNav .contact div div span.address {
+  text-wrap: nowrap;
+}
 header #navbarNav .contact div div i {
   padding-right: var(--bs-navbar-nav-link-padding-x);
 }
@@ -561,9 +564,6 @@ footer section.bottom .social a {
     border: none;
     padding: 0;
     flex: 1;
-  }
-  header #navbarNav .nav .contact div div span.tel, header #navbarNav .nav .contact div div span.address {
-    text-wrap: nowrap;
   }
   header #navbarNav .nav .contact div i {
     padding-right: calc(var(--bs-navbar-nav-link-padding-x) * 1.5);
