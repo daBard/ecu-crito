@@ -43,6 +43,10 @@ $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation 
 
 html, body, main {
     background-color: $bg-white;
+    
+    &, header, footer {
+        width: 100dvw;
+    }
 
     & > * {
         color: $color-prim;

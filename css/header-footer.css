@@ -12,6 +12,9 @@ html, body, main {
   background-color: #ffffff;
   z-index: -99;
 }
+html, html header, html footer, body, body header, body footer, main, main header, main footer {
+  min-width: 375px;
+}
 html > *, body > *, main > * {
   color: #191919;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -681,4 +684,4 @@ footer section.bottom .social a {
     flex-direction: column-reverse;
     gap: 3rem;
   }
-}/*# sourceMappingURL=header-footer.css.map */
+}
