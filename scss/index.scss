@@ -59,7 +59,7 @@
             }
 
             &:hover, &:focus {
-                scale: 1.2;
+                transform: scale(1.2);
                 background-color: transparent;
 
                 img {

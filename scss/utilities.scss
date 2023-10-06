@@ -44,9 +44,9 @@ $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation 
 html, body, main {
     background-color: $bg-white;
     
-    &, header, footer {
+    /* &, header, footer {
         width: 100dvw;
-    }
+    }*/
 
     & > * {
         color: $color-prim;
@@ -326,15 +326,15 @@ form {
 /* Spin-pop */
 @keyframes spin-pop {
     50% {
-        scale: .2;
+        transform: scale(.2);
     }
     75% {
-        scale: 1.2;
+        transform: scale(1.2);
         transform: rotate(360deg);
     }
     100% {
-        scale: 1.1;
-            transform: rotate(360deg);
+        transform: scale(1.1);
+        transform: rotate(360deg);
     }
 }
 
@@ -352,8 +352,8 @@ form {
 
 /* Popping */
 @keyframes popping {
-    50% { scale: 1.2; }
-    100% { scale: 1; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 @media (max-width: 1520px) {
@@ -393,6 +393,6 @@ form {
     }
 
     main i {
-        scale: .6;
+        transform: scale(.6);
     }
 }

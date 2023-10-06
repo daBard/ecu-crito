@@ -10,10 +10,10 @@
 
 html, body, main {
   background-color: #ffffff;
+  /* &, header, footer {
+      width: 100dvw;
+  }*/
   z-index: -99;
-}
-html, html header, html footer, body, body header, body footer, main, main header, main footer {
-  width: 100dvw;
 }
 html > *, body > *, main > * {
   color: #191919;
@@ -245,14 +245,14 @@ form fieldset label .icon.top {
 /* Spin-pop */
 @keyframes spin-pop {
   50% {
-    scale: 0.2;
+    transform: scale(0.2);
   }
   75% {
-    scale: 1.2;
+    transform: scale(1.2);
     transform: rotate(360deg);
   }
   100% {
-    scale: 1.1;
+    transform: scale(1.1);
     transform: rotate(360deg);
   }
 }
@@ -270,10 +270,10 @@ form fieldset label .icon.top {
 /* Popping */
 @keyframes popping {
   50% {
-    scale: 1.2;
+    transform: scale(1.2);
   }
   100% {
-    scale: 1;
+    transform: scale(1);
   }
 }
 @media (max-width: 1520px) {
@@ -306,6 +306,6 @@ form fieldset label .icon.top {
     margin: 0;
   }
   main i {
-    scale: 0.6;
+    transform: scale(0.6);
   }
 }
