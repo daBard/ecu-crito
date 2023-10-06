@@ -58,8 +58,8 @@
                 mix-blend-mode: multiply;
             }
 
-            &:hover, &:focus {
-                transform: scale(1.2);
+            &:hover, &:focus { 
+                scale: 1.2;
                 background-color: transparent;
 
                 img {

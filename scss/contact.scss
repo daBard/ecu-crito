@@ -4,7 +4,7 @@
 .contact-page section.hero {
     position: relative;
 
-    img.bg-lines {
+    img.bg-lines { 
         max-width: 40dvw;
         padding: 0;
         position: absolute;
@@ -222,12 +222,12 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576px) { 
     /* SECTION INFORMATION 576 */
     .contact-page section.information .container { 
         .boxes .box {
-            .icon i {
-                transform: scale(1);
+            .icon i { 
+                scale: 1;
             }
         }
     }

@@ -326,15 +326,15 @@ form {
 /* Spin-pop */
 @keyframes spin-pop {
     50% {
-        transform: scale(.2);
+        scale: .2;
     }
     75% {
-        transform: scale(1.2);
         transform: rotate(360deg);
+        scale: 1.2;
     }
     100% {
-        transform: scale(1.1);
         transform: rotate(360deg);
+        scale: 1.1;
     }
 }
 
@@ -352,8 +352,8 @@ form {
 
 /* Popping */
 @keyframes popping {
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    50% { scale: 1.2; }
+    100% { scale: 1; }
 }
 
 @media (max-width: 1520px) {
@@ -393,6 +393,6 @@ form {
     }
 
     main i {
-        transform: scale(.6);
+        scale: .6;
     }
 }

@@ -245,15 +245,15 @@ form fieldset label .icon.top {
 /* Spin-pop */
 @keyframes spin-pop {
   50% {
-    transform: scale(0.2);
+    scale: 0.2;
   }
   75% {
-    transform: scale(1.2);
     transform: rotate(360deg);
+    scale: 1.2;
   }
   100% {
-    transform: scale(1.1);
     transform: rotate(360deg);
+    scale: 1.1;
   }
 }
 /* Spin-clock UNUSED
@@ -270,10 +270,10 @@ form fieldset label .icon.top {
 /* Popping */
 @keyframes popping {
   50% {
-    transform: scale(1.2);
+    scale: 1.2;
   }
   100% {
-    transform: scale(1);
+    scale: 1;
   }
 }
 @media (max-width: 1520px) {
@@ -306,6 +306,6 @@ form fieldset label .icon.top {
     margin: 0;
   }
   main i {
-    transform: scale(0.6);
+    scale: 0.6;
   }
 }
